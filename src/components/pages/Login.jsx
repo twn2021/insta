@@ -37,7 +37,7 @@ const Login = () => {
               <Facebook>Facebook으로 로그인</Facebook>
             </Info>
             <Link to="/signup">
-              <FindPw>비밀번호를 잊으셨나요?</FindPw>
+              <FindPw>비밀번호를 잊으셨나요?dddd</FindPw>
             </Link>
           </Right>
         </Article>
