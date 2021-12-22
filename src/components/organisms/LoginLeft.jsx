@@ -23,6 +23,7 @@ const LoginLeft = () => {
       //     nextIndex = activeIndex +1;
       // } 이 문구를 위의 삼항연산자로 변경함 !!
 
+
       setActiveIndex(nextIndex);
     };
 
@@ -30,17 +31,18 @@ const LoginLeft = () => {
   }, [activeIndex]);
 
   return (
-    <Warapper>
+    <Wrapper>
       <ImageList>
         {imageList.map((image, i) => (
           <Image src={image} active={activeIndex === i} />
         ))}
       </ImageList>
-    </Warapper>
+    </Wrapper>
   );
 };
 
-const Warapper = styled.div`
+const Wrapper = styled.div`
+// pages -> login.jsx에서 가져온 left를 이름변경
   height: 618px;
   width: 454px;
   background-image: url(https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png);
@@ -56,5 +58,6 @@ const Image = styled.img`
   opacity: ${({ active }) => (active ? "1" : "0")};
   transition: 2s opacity ease-in;
 `;
+
 
 export default LoginLeft;
