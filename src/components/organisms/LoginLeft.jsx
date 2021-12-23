@@ -16,16 +16,15 @@ const LoginLeft = () => {
       const nextIndex =
         activeIndex === imageList.length - 1 ? 0 : activeIndex + 1;
 
-      // let nextIndex;
-      // if( activeindex === imageList.length-1) {
-      //     nextIndex = 0;
-      // } else {
-      //     nextIndex = activeIndex +1;
-      // } 이 문구를 위의 삼항연산자로 변경함 !!
-
-
       setActiveIndex(nextIndex);
     };
+
+    // let nextIndex;
+    // if( activeindex === imageList.length-1) {
+    //     nextIndex = 0;
+    // } else {
+    //     nextIndex = activeIndex +1;
+    // } 이 문구를 위의 삼항연산자로 변경함 !!
 
     setTimeout(changeIndex, 4000);
   }, [activeIndex]);
@@ -42,7 +41,7 @@ const LoginLeft = () => {
 };
 
 const Wrapper = styled.div`
-// pages -> login.jsx에서 가져온 left를 이름변경
+  // pages -> login.jsx에서 가져온 left를 이름변경
   height: 618px;
   width: 454px;
   background-image: url(https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png);
@@ -58,6 +57,5 @@ const Image = styled.img`
   opacity: ${({ active }) => (active ? "1" : "0")};
   transition: 2s opacity ease-in;
 `;
-
 
 export default LoginLeft;
