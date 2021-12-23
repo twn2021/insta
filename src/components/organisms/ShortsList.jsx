@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ShortsList = () => {
   return (
     <div>
-      <Short></Short>
+      <Short>dd</Short>
     </div>
   );
 };

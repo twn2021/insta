@@ -19,7 +19,11 @@ const Main = () => {
   );
 };
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+  padding-top: 90px;
+  max-width: 975px;
+  margin: 0 auto;
+`;
 const Left = styled.div``;
 const Right = styled.div``;
 
