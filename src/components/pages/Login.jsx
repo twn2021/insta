@@ -10,7 +10,7 @@ import {
   BtnSubmit,
   Main,
 } from "../atoms/login";
-import { Logo } from "../molecules/login";
+import { Logo, Or } from "../molecules/login";
 
 const Login = () => {
   return (
@@ -30,6 +30,7 @@ const Login = () => {
               <BtnSubmitWrapper>
                 <BtnSubmit>로그인</BtnSubmit>
               </BtnSubmitWrapper>
+              <Or />
               {/* 모큘 or.jsx로 보냄 */}
               <FacebookLogin>Facebook으로 로그인</FacebookLogin>
               <ForgetPassword>비밀번호를 잊으셨나요?</ForgetPassword>

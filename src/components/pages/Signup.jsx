@@ -10,7 +10,7 @@ import {
   BtnSubmitWrapper,
   BtnSubmit,
 } from "../atoms/login";
-import { Logo } from "../molecules/login";
+import { Logo, Or } from "../molecules/login";
 import { signup } from "../../apis/user";
 
 const Signup = () => {
@@ -49,7 +49,7 @@ const Signup = () => {
               <BtnSubmitWrapper>
                 <BtnSubmit>Facebook으로 로그인</BtnSubmit>
               </BtnSubmitWrapper>
-
+                <Or />
               <InputTextWrapper>
                 <InputText
                   placeholder="성명"
