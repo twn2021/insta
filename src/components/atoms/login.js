@@ -30,19 +30,19 @@ export const BtnSubmitWrapper = styled.div`
 `;
 
 export const BtnSubmit = styled.button`
- background-color: #0095f6;
- border-radius: 4px;
- color: #fff;
- border: 1px solid transparent;
- padding: 5px 9px;
+  background-color: #0095f6;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 5px 9px;
 `;
 
 export const PageWrapper = styled.div`
   background: #fafafa;
   min-height: 100vh;
   display: flex;
-// 부모요소에 플렉스를 주고 자식요소에 플랙스 1을 주면
-// 부모요소를 제외하고 남은 부분에을 모조리 자식요소가 체운다
+  // 부모요소에 플렉스를 주고 자식요소에 플랙스 1을 주면
+  // 부모요소를 제외하고 남은 부분에을 모조리 자식요소가 체운다
   flex-direction: column;
   // 자식요소가 옆으로 오는것을 중앙정렬
 `;

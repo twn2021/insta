@@ -10,45 +10,42 @@ import {
   BtnSubmit,
   Main,
 } from "../atoms/login";
-import { Logo, Or } from "../molecules/login";
+import { Logo } from "../molecules/login";
 
 const Login = () => {
-
   return (
-      <PageWrapper>
-        <Main>
-          <LoginLeft /> 
-          <Right>
+    <PageWrapper>
+      <Main>
+        <LoginLeft />
+        <Right>
           <Box>
-            <Logo src= "https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"/>
+            <Logo src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
             <Form>
               <InputTextWrapper>
-                  <InputText placeholder="전화번호, 사용자 이름 또는 이메일" />
-                </InputTextWrapper>
-                <InputTextWrapper>
-                  <InputText placeholder="비밀번호" />
+                <InputText placeholder="전화번호, 사용자 이름 또는 이메일" />
+              </InputTextWrapper>
+              <InputTextWrapper>
+                <InputText placeholder="비밀번호" />
               </InputTextWrapper>
               <BtnSubmitWrapper>
                 <BtnSubmit>로그인</BtnSubmit>
               </BtnSubmitWrapper>
-              <Or />
               {/* 모큘 or.jsx로 보냄 */}
               <FacebookLogin>Facebook으로 로그인</FacebookLogin>
               <ForgetPassword>비밀번호를 잊으셨나요?</ForgetPassword>
-              </Form>
+            </Form>
           </Box>
           <Box>
             <SignupWrapper>
-                계정이 없으신가요? <Link to="/signup">가입하기</Link>
+              계정이 없으신가요? <Link to="/signup">가입하기</Link>
             </SignupWrapper>
           </Box>
-          </Right>
-        </Main>
-        <Footer>Footer!!!!</Footer>
-      </PageWrapper>
+        </Right>
+      </Main>
+      <Footer>Footer!!!!</Footer>
+    </PageWrapper>
   );
 };
-
 
 const Right = styled.div`
   width: 350px;
@@ -74,7 +71,7 @@ const SignupWrapper = styled.div`
 `;
 
 const Footer = styled.footer`
-text-align: center;
+  text-align: center;
 `;
 
 export default Login;
