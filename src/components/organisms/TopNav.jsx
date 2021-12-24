@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ImgHome, Magnifier, Profile } from "../../assets/images/icons";
+import {
+  ImgHome,
+  Magnifier,
+  Profile,
+  Compass,
+  Add,
+  Heart,
+  Paperplane,
+} from "../../assets/images/icons";
 
 const TopNav = () => {
   return (
@@ -19,16 +27,16 @@ const TopNav = () => {
             <ImgHome />
           </NavIconWrapper>
           <NavIconWrapper>
-            <ImgHome />
+            <Paperplane />
           </NavIconWrapper>
           <NavIconWrapper>
-            <ImgHome />
+            <Add />
           </NavIconWrapper>
           <NavIconWrapper>
-            <ImgHome />
+            <Compass />
           </NavIconWrapper>
           <NavIconWrapper>
-            <ImgHome />
+            <Heart />
           </NavIconWrapper>
           <NavIconWrapper>
             <ImgProfile />
