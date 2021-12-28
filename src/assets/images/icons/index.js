@@ -4,9 +4,10 @@ import { ReactComponent as ImgInbox } from "./paperplane.svg";
 import { ReactComponent as ImgAddPost } from "./add.svg";
 import { ReactComponent as ImgExplore } from "./compass.svg";
 import { ReactComponent as ImgActivity } from "./heart.svg";
-import { ReactComponent as ImgMore } from "./more.svg";
+import { ReactComponent as ImgMore } from "./imgMore.svg";
 import { ReactComponent as ImgComment } from "./comment.svg";
-import { ReactComponent as ImgBookMark } from "./ImgBookMark.svg";
+import { ReactComponent as ImgBookMark } from "./bookmark.svg";
+import { ReactComponent as Imoticon } from "./imoticon.svg";
 
 import Magnifier from "./magnifier.png";
 import Profile from "./user.jpg";
@@ -22,4 +23,5 @@ export {
   ImgMore,
   ImgComment,
   ImgBookMark,
+  Imoticon,
 };

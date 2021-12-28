@@ -16,7 +16,7 @@ const Main = () => {
             <ShortsList data={shortsList} />
             {/* ShortList.jsx 에게  data란 이름의 Props로 shortList를 보내준다 */}
             {/*프롭스는 상위 컴포넌트가 하위 컴포넌트에 속성을 전달하는것*/}
-            <PostList data={postList}>
+            <PostList data={PostList} />
           </Left>
           <Right></Right>
         </PageWrapper>
