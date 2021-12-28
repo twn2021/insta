@@ -1,4 +1,5 @@
 import React from "react";
+import { findRenderedDOMComponentWithClass } from "react-dom/cjs/react-dom-test-utils.production.min";
 import styled from "styled-components";
 import {
   ImgBookMark,
@@ -6,106 +7,88 @@ import {
   ImgInbox,
   ImgMore,
   ImgComment,
-  Profile,
-  Imoticon,
+  ImgImoticon,
 } from "../../assets/images/icons";
 
-// import PostImageList from ..
+import {PostImageList} from ".";
 
 const PostList = ({ data }) => {
+  // datas -> main.js ->  posts.js -> PostList.jsx 
   return (
     <List>
-      <Post>
-        <Top>
-          <TopProfileWrapper>
-            <TopProfile src={Profile} />
-          </TopProfileWrapper>
-          <TopUserName>twn2018</TopUserName>
-          <BtnMore>
-            <ImgMore />
-          </BtnMore>
-        </Top>
+      {
+        data.map(({ id, created_at, content, user, name, imageList, likes, replys })=> (
 
-        <ImageList>
-          <Image src="https://www.nintendo.co.kr/front_images/news/878/250912857bdfb55325faf76ae65ad934.jpg" />
-        </ImageList>
-        <IconWrapper>
-          <IconLeft>
-            <BtnIcon>
-              <ImgActivity />
-            </BtnIcon>
-            <BtnIcon>
-             <ImgComment />
-            </BtnIcon>
-            <BtnIcon>
-              <ImgInbox />
-            </BtnIcon>
-          </IconLeft>
-          <IconRight>
-            <BtnIcon>
-              <ImgBookMark />
-            </BtnIcon>
-          </IconRight>
-          </IconWrapper>
+          <Post key={id}>
+          <Top>
+            <TopProfileWrapper>
+              <TopProfile src={user.profileImage} />
+            </TopProfileWrapper>
+            <TopUserName>{user.name}</TopUserName>
+            <BtnMore>
+              <ImgMore />
+            </BtnMore>
+          </Top>
 
-            <LikeWrapper>
-                좋아요 5,444,232개
-            </LikeWrapper>
+          <PostImageList data={imageList}/>
+          {/* PostImageList.jsx 에 data라는 이름으로 보내준다. */}
 
-            <CommentWrapper>
-              <Comment>
-                <CommentUserName>twn2018</CommentUserName>
-                &nbsp;
-                <CommentContent>크리스마스 선물 나는 사실 플스4가 가지고 싶었지만. 누구를 위한 선물인가..</CommentContent>
-              </Comment>
+          <IconWrapper>
+            <IconLeft>
+              <BtnIcon>
+                <ImgActivity />
+              </BtnIcon>
+              <BtnIcon>
+               <ImgComment />
+              </BtnIcon>
+              <BtnIcon>
+                <ImgInbox />
+              </BtnIcon>
+            </IconLeft>
+            <IconRight>
+              <BtnIcon>
+                <ImgBookMark />
+              </BtnIcon>
+            </IconRight>
+            </IconWrapper>
+  
+              <LikeWrapper>
+                  좋아요 {likes.total}개
+              </LikeWrapper>
+  
+              <CommentWrapper>
+                <Comment>
+                  <CommentUserName>{user.name}</CommentUserName>
+                  &nbsp;
+                  <CommentContent>{content}</CommentContent>
+                </Comment>
+                {
+                replys.items.map(({id, user, content})=>(
+                  // 비구조화 활당 {} reply.을 생략할수 있다.
+                  <Comment key={id}>
+                  <CommentUserName>{user.name}</CommentUserName>
+                  &nbsp;
+                  <CommentContent>{content}</CommentContent>
+                </Comment>
+                ))}
+  
+              </CommentWrapper>
+              <DateTimeWrapper>
+                {created_at}
+              </DateTimeWrapper>
+              <AddCommentWrapper>
+                <BtnImoticon>
+                  <ImgImoticon/>
+                </BtnImoticon>
+                <CommentTextarea rows="1" placeholder="댓글달기..."/>
+                <BtnCommentSubmit>게시</BtnCommentSubmit>
+              </AddCommentWrapper>
+        </Post>
 
-              <Comment>
-                <CommentUserName>댓글1</CommentUserName>
-                &nbsp;
-                <CommentContent>축하드려요</CommentContent>
-              </Comment>
-              <Comment>
-                <CommentUserName>댓글2</CommentUserName>
-                &nbsp;
-                <CommentContent>부러워요</CommentContent>
-              </Comment>
+        ))
+      }
 
-            </CommentWrapper>
-            <DateTimeWrapper>
-              1일 전
-            </DateTimeWrapper>
-            <AddCommentWrapper>
-              <BtnImoticon>
-                <Imoticon/>
-              </BtnImoticon>
-              <CommentTextarea rows="1" placeholder="댓글달기..."/>
-              <BtnCommentSubmit>게시</BtnCommentSubmit>
-            </AddCommentWrapper>
-      </Post>
     </List>
-
-
-
-
-    // <Container>
-    //   <Post>
-    //     <Nav>
-    //       <Header>
-    //         <ProfileImage src={Profile} />
-    //         <UserId>dfdsfdsf</UserId>
-    //       </Header>
-
-    //       <CommentWrapper>
-
-    //         {replys.items.map({id, user, content}) => (
-    //           <Comment key={id}>
-    //             <CommnetUserName>{user.name}</CommnetUserName>
-    //             &nbsp;
-    //             <CommentContent>{content}</CommentContent>
-    //           </Comment>
-    //         ))}
-
-    //       </CommentWrapper>
   );
 };
 
@@ -146,12 +129,6 @@ const BtnMore = styled.button`
   background: none;
   display: flex;
   align-items: center;
-`;
-
-const ImageList = styled.section``;
-
-const Image = styled.img`
-  width: 100%;
 `;
 
 const IconWrapper = styled.div`

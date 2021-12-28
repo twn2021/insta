@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import TopNav from "../organisms/TopNav";
-import ShortsList from "../organisms/ShortsList";
-import PostList from "../organisms/PostList";
+import {TopNav, ShortsList, PostList} from "../organisms";
 
 import shortsList from "../../datas/shorts";
+import postList from "../../datas/posts";
+
 
 const Main = () => {
   return (
@@ -16,7 +16,7 @@ const Main = () => {
             <ShortsList data={shortsList} />
             {/* ShortList.jsx 에게  data란 이름의 Props로 shortList를 보내준다 */}
             {/*프롭스는 상위 컴포넌트가 하위 컴포넌트에 속성을 전달하는것*/}
-            <PostList data={PostList} />
+            <PostList data={postList} />
           </Left>
           <Right></Right>
         </PageWrapper>

@@ -28,14 +28,14 @@ const Wrapper = styled.section`
   overflow: hidden;
   position: relative;
 `;
-const ImageList = styled.div`
+const ImageList = styled.ul`
   display: flex;
   align-items: center;
   transform: ${({ activeIndex }) => `translateX(${-612 * activeIndex}px)`};
   transition: transform 0.5s ease-in;
 `;
-const Image = styled.div`
-  width: 100%;
+const Image = styled.img`
+  min-width: 100%;
 `;
 
 const Btn = styled.button`
@@ -50,10 +50,10 @@ const Btn = styled.button`
 `;
 
 const BtnNext = styled(Btn)`
-  left: 15px;
+  right: 15px;
 `;
 const BtnPrev = styled(Btn)`
-  right: 15px;
+  left: 15px;
 `;
 
 export default PostImageList;
