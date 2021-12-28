@@ -1,68 +1,121 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  ImgHome,
-  Magnifier,
+  ImgBookMark,
+  ImgActivity,
+  ImgInbox,
+  ImgMore,
+  ImgComment,
   Profile,
-  Compass,
-  Add,
-  Heart,
-  Paperplane,
 } from "../../assets/images/icons";
 
-import { Lee1 } from "../../assets/images/contents";
+// import PostImageList from ..
 
-const PostList = () => {
+const PostList = ({ data }) => {
   return (
-    <Container>
+    <List>
       <Post>
-        <Nav>
-          <Header>
-            <ProfileImage src={Profile} />
-            <UserId>dfdsfdsf</UserId>
-          </Header>
-          <OptBtn />
-        </Nav>
-        <Body>
-          <Contents src={Lee1} />
-        </Body>
+        <Top>
+          <TopProfileWrapper>
+            <TopProfile src={Profile} />
+          </TopProfileWrapper>
+          <TopUserName>sdfsdf</TopUserName>
+          <BtnMore>
+            <ImgMore />
+          </BtnMore>
+        </Top>
 
-        {/* <Body />
-        <Section>
-          <Left>
-            <Btn1 />
-            <Btn2 />
-            <Btn3 />
-          </Left>
-          <Right>
-            <Btn4 />
-          </Right>
-        </Section> */}
+        <ImageList>
+          <Image src="" />
+        </ImageList>
+        <IconWrapper>
+          <IconLeft>
+            <ImgActivity />
+            <ImgComment />
+            <ImgInbox />
+          </IconLeft>
+          <IconRight>
+            <ImgBookMark />
+          </IconRight>
+        </IconWrapper>
       </Post>
-    </Container>
+    </List>
+
+    // <Container>
+    //   <Post>
+    //     <Nav>
+    //       <Header>
+    //         <ProfileImage src={Profile} />
+    //         <UserId>dfdsfdsf</UserId>
+    //       </Header>
+
+    //       <CommentWrapper>
+
+    //         {replys.items.map({id, user, content}) => (
+    //           <Comment key={id}>
+    //             <CommnetUserName>{user.name}</CommnetUserName>
+    //             &nbsp;
+    //             <CommentContent>{content}</CommentContent>
+    //           </Comment>
+    //         ))}
+
+    //       </CommentWrapper>
   );
 };
 
-const Container = styled.div`
-  border: 1px solid #dbdbdb;
-  background: #fff;
-  display: flex;
-`;
+const List = styled.div``;
 
 const Post = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 600px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  margin-bottom: 24px;
 `;
 
-const Nav = styled.div``;
-const Header = styled.div``;
-const ProfileImage = styled.img``;
-const UserId = styled.div``;
-const OptBtn = styled.div``;
+const Top = styled.div`
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+`;
 
-const Body = styled.div``;
-const Contents = styled.img``;
+const TopProfileWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TopProfile = styled.img`
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+`;
+
+const TopUserName = styled.div`
+  margin-left: 12px;
+  color: #262626;
+  font-weight: 600;
+  font-size: 14px;
+  flex: 1;
+`;
+
+const BtnMore = styled.button`
+  background: none;
+  display: flex;
+  align-items: center;
+`;
+
+const ImageList = styled.div``;
+
+const Image = styled.img`
+  width: 100%;
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 16px;
+`;
+
+const IconLeft = styled.div``;
+
+const IconRight = styled.div``;
 
 export default PostList;

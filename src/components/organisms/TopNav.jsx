@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   ImgHome,
-  Magnifier,
+  ImgExplore,
+  ImgAddPost,
+  ImgActivity,
+  ImgInbox,
   Profile,
-  Compass,
-  Add,
-  Heart,
-  Paperplane,
 } from "../../assets/images/icons";
 
 const TopNav = () => {
@@ -27,16 +26,16 @@ const TopNav = () => {
             <ImgHome />
           </NavIconWrapper>
           <NavIconWrapper>
-            <Paperplane />
+            <ImgExplore />
           </NavIconWrapper>
           <NavIconWrapper>
-            <Add />
+            <ImgAddPost />
           </NavIconWrapper>
           <NavIconWrapper>
-            <Compass />
+            <ImgActivity />
           </NavIconWrapper>
           <NavIconWrapper>
-            <Heart />
+            <ImgInbox />
           </NavIconWrapper>
           <NavIconWrapper>
             <ImgProfile />
@@ -90,7 +89,7 @@ const SearchInput = styled.input`
 `;
 
 const IconSearch = styled.span`
-  background-image: url(${Magnifier});
+  background-image: url(${ImgExplore});
   width: 12px;
   height: 12px;
   display: inline-block;
