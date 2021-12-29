@@ -8,6 +8,8 @@ import { ReactComponent as ImgMore } from "./imgMore.svg";
 import { ReactComponent as ImgComment } from "./comment.svg";
 import { ReactComponent as ImgBookMark } from "./bookmark.svg";
 import { ReactComponent as ImgImoticon } from "./imoticon.svg";
+import { ReactComponent as ImgDropdownProfile } from "./dropdownprofile.svg";
+import { ReactComponent as ImgDropdownSet } from "./dropdownset.svg";
 
 import Magnifier from "./magnifier.png";
 import Profile from "./user.jpg";
@@ -24,4 +26,6 @@ export {
   ImgComment,
   ImgBookMark,
   ImgImoticon,
+  ImgDropdownProfile,
+  ImgDropdownSet,
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
@@ -10,7 +10,24 @@ import {
   Profile,
 } from "../../assets/images/icons";
 
+import ProfileDropdown from "../organisms/ProfileDropdown";
+
 const TopNav = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const dropdownEl = useRef(null);
+  useEffect(() => {
+    const onClick = (e) => {
+      if (dropdownEl.cuuret && !dropdownEl.current.contains(e.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.body.addEventListener("click", onClick);
+    return () => {
+      document.body.removeEventListener("click", onClick);
+    };
+  }, [dropdownEl]);
+
   return (
     <Header>
       <HeadWrapper>
@@ -38,7 +55,10 @@ const TopNav = () => {
             <ImgInbox />
           </NavIconWrapper>
           <NavIconWrapper>
-            <ImgProfile />
+            <DropdoownWrapper ref={dropdownEl}>
+              <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
+              {showDropdown && <ProfileDropdown />}
+            </DropdoownWrapper>
           </NavIconWrapper>
         </Nav>
       </HeadWrapper>
@@ -49,6 +69,8 @@ const TopNav = () => {
 const Header = styled.div`
   background: #fff;
   position: fixed;
+  z-index: 100;
+  /* 메인페이지의 이미지컨텐츠가 탑네브 뒤로 가도록 제트인덱스 줌 */
   top: 0;
   height: 54px;
   border-bottom: 1px solid #dbdbdb;
@@ -98,6 +120,7 @@ const IconSearch = styled.span`
   top: 11px; ////////////////탑 ??
   left: 12px;
 `;
+
 const NavIconWrapper = styled.div`
   & + & {
     margin-left: 22px;
@@ -116,6 +139,10 @@ const ImgProfile = styled.img`
   border-radius: 50%;
   width: 24px;
   height: 24px;
+`;
+
+const DropdoownWrapper = styled.div`
+  position: relative;
 `;
 
 export default TopNav;
