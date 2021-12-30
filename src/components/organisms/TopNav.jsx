@@ -11,14 +11,16 @@ import {
 } from "../../assets/images/icons";
 
 import ProfileDropdown from "../organisms/ProfileDropdown";
+import ModalAddPost from "../organisms/ModalAddPost";
 
 const TopNav = () => {
+  // 프로필 드롭다운
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dropdownEl = useRef(null);
   useEffect(() => {
     const onClick = (e) => {
-      if (dropdownEl.cuuret && !dropdownEl.current.contains(e.target)) {
+      if (dropdownEl.current && !dropdownEl.current.contains(e.target)) {
         setShowDropdown(false);
       }
     };
@@ -28,41 +30,48 @@ const TopNav = () => {
     };
   }, [dropdownEl]);
 
+  //새 게시물 모달
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <Header>
-      <HeadWrapper>
-        <Link to="/">
-          <LogoImage src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"></LogoImage>
-        </Link>
-        <SearchWrapper>
-          <IconSearch />
-          <SearchInput placeholder="검색" />
-        </SearchWrapper>
-        <Nav>
-          <NavIconWrapper>
-            <ImgHome />
-          </NavIconWrapper>
-          <NavIconWrapper>
-            <ImgExplore />
-          </NavIconWrapper>
-          <NavIconWrapper>
-            <ImgAddPost />
-          </NavIconWrapper>
-          <NavIconWrapper>
-            <ImgActivity />
-          </NavIconWrapper>
-          <NavIconWrapper>
-            <ImgInbox />
-          </NavIconWrapper>
-          <NavIconWrapper>
-            <DropdoownWrapper ref={dropdownEl}>
-              <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
-              {showDropdown && <ProfileDropdown />}
-            </DropdoownWrapper>
-          </NavIconWrapper>
-        </Nav>
-      </HeadWrapper>
-    </Header>
+    <>
+      <Header>
+        <HeadWrapper>
+          <Link to="/">
+            <LogoImage src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"></LogoImage>
+          </Link>
+          <SearchWrapper>
+            <IconSearch />
+            <SearchInput placeholder="검색" />
+          </SearchWrapper>
+          <Nav>
+            <NavIconWrapper>
+              <ImgHome />
+            </NavIconWrapper>
+            <NavIconWrapper>
+              <ImgExplore />
+            </NavIconWrapper>
+            <NavIconWrapper>
+              <ImgAddPost onClick={() => setShowModal(true)} />
+            </NavIconWrapper>
+            <NavIconWrapper>
+              <ImgActivity />
+            </NavIconWrapper>
+            <NavIconWrapper>
+              <ImgInbox />
+            </NavIconWrapper>
+            <NavIconWrapper>
+              <DropdoownWrapper ref={dropdownEl}>
+                <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
+                {showDropdown && <ProfileDropdown />}
+              </DropdoownWrapper>
+            </NavIconWrapper>
+          </Nav>
+        </HeadWrapper>
+      </Header>
+      {showModal && <ModalAddPost onClose={() => setShowModal(false)} />}
+      {/* 모달에드포스트jsx에 onClose라는 이름의 프롭스로 setshowmodal을 false로 만들어주는 함수를 보내준다 */}
+    </>
   );
 };
 
