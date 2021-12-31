@@ -4,6 +4,7 @@ import { TopNav, ShortsList, PostList, MainRight } from "../organisms";
 
 import shortsList from "../../datas/shorts";
 import postList from "../../datas/posts";
+import mainRight from "../../datas/mainRight";
 
 const Main = () => {
   return (
@@ -18,7 +19,7 @@ const Main = () => {
             <PostList data={postList} />
           </Left>
           <Right>
-            <MainRight />
+            <MainRight data={mainRight} />
           </Right>
         </PageWrapper>
       </Page>
