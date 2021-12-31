@@ -7,8 +7,9 @@ import {
   ImgAddPost,
   ImgActivity,
   ImgInbox,
-  Profile,
 } from "../../assets/images/icons";
+
+import { imgUserProfile } from "../../assets/images/profile";
 
 import ProfileDropdown from "../organisms/ProfileDropdown";
 import ModalAddPost from "../organisms/ModalAddPost";
@@ -142,7 +143,7 @@ const Nav = styled.div`
 `;
 
 const ImgProfile = styled.img`
-  background-image: url(${Profile});
+  background-image: url(${imgUserProfile});
   background-size: 28px;
   background-position: center;
   border-radius: 50%;

@@ -39,6 +39,9 @@ const PageWrapper = styled.div`
 const Left = styled.div`
   margin-right: 28px;
   max-width: 614px;
+  width: 100%;
+  //이미지가 1장 이상일때. 첫장만 100%로 나오고 넘기면 이미지 위치가 틀어진다.
+  //자바스크립트로 해결해야함. css에서는 불가
 `;
 const Right = styled.div`
   flex: 1;

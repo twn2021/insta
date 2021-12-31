@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useState, React } from "react";
 
 const PostImageList = ({ data }) => {
-
   const [activeIndex, setActiveIndex] = useState(0);
   const handleIndex = (n) => setActiveIndex((prev) => prev + n);
   return (

@@ -13,12 +13,10 @@ import { ReactComponent as ImgDropdownSet } from "./dropdownset.svg";
 import { ReactComponent as ImgModalBack } from "./modalback.svg";
 
 import Magnifier from "./magnifier.png";
-import Profile from "./user.jpg";
 
 export {
   ImgHome,
   Magnifier,
-  Profile,
   ImgExplore,
   ImgAddPost,
   ImgActivity,
