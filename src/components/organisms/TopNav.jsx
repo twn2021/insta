@@ -9,9 +9,11 @@ import {
   ImgInbox,
 } from "../../assets/images/icons";
 
-import { imgUserProfile } from "../../assets/images/profile";
+import { Magnifier } from "../../assets/images/icons";
 
-import ProfileDropdown from "../organisms/ProfileDropdown";
+import { ImgUserProfile } from "../../assets/images/profile";
+
+import ProfileDropdown from "./ProfileDropdown";
 import ModalAddPost from "../organisms/ModalAddPost";
 
 const TopNav = () => {
@@ -42,25 +44,33 @@ const TopNav = () => {
             <LogoImage src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"></LogoImage>
           </Link>
           <SearchWrapper>
-            <IconSearch />
+            <IconSearch alt="돋보기" />
             <SearchInput placeholder="검색" />
           </SearchWrapper>
           <Nav>
             <NavIconWrapper>
-              <ImgHome />
+              <ImgHome alt="홈" />
             </NavIconWrapper>
+
             <NavIconWrapper>
-              <ImgExplore />
+              <ImgInbox alt="다이렉트메시지" />
             </NavIconWrapper>
+
             <NavIconWrapper>
-              <ImgAddPost onClick={() => setShowModal(true)} />
+              <ImgAddPost
+                onClick={() => setShowModal(true)}
+                alt="새로운게시물"
+              />
             </NavIconWrapper>
+
             <NavIconWrapper>
-              <ImgActivity />
+              <ImgExplore alt="사람찾기" />
             </NavIconWrapper>
+
             <NavIconWrapper>
-              <ImgInbox />
+              <ImgActivity alt="활동피드" />
             </NavIconWrapper>
+
             <NavIconWrapper>
               <DropdoownWrapper ref={dropdownEl}>
                 <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
@@ -121,13 +131,13 @@ const SearchInput = styled.input`
 `;
 
 const IconSearch = styled.span`
-  background-image: url(${ImgExplore});
+  background-image: url(${Magnifier});
   width: 12px;
   height: 12px;
   display: inline-block;
   background-size: cover;
   position: absolute;
-  top: 11px; ////////////////탑 ??
+  top: 11px;
   left: 12px;
 `;
 
@@ -143,7 +153,7 @@ const Nav = styled.div`
 `;
 
 const ImgProfile = styled.img`
-  background-image: url(${imgUserProfile});
+  background-image: url(${ImgUserProfile});
   background-size: 28px;
   background-position: center;
   border-radius: 50%;

@@ -1,6 +1,6 @@
-import Id1 from "./Id1.jpg";
-import Id2 from "./Id2.jpg";
-import Id3 from "./Id3.jpg";
-import imgUserProfile from "./user.jpg";
+import ImgUserProfile from "./user.jpg";
+import js from "./js.png";
+import jQuery from "./jQuery.png";
+import react from "./react.png";
 
-export { Id1, Id2, Id3, imgUserProfile };
+export { ImgUserProfile, js, jQuery, react };

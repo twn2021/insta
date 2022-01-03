@@ -1,13 +1,13 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { imgUserProfile } from "../../assets/images/profile";
+import styled from "styled-components";
+import { ImgUserProfile } from "../../assets/images/profile";
 
 const MainRight = ({ data }) => {
   return (
     <>
       <Container>
         <Head>
-          <ImgUserProfile />
+          <ImgMyProfile />
           <Info>
             <Id>twn2018</Id>
             <Name>TWNaka태와니</Name>
@@ -23,7 +23,7 @@ const MainRight = ({ data }) => {
           <Users>
             {data.map(({ id, user: { name, profileImage, info } }) => (
               <Shorts key={id}>
-                <ImgUserProfile src={profileImage} small />
+                <ImgProfile src={profileImage} />
                 <Info>
                   <Id>{name}</Id>
                   <Name>{info}</Name>
@@ -33,33 +33,50 @@ const MainRight = ({ data }) => {
             ))}
           </Users>
         </Body>
-        <Footer></Footer>
+        <Footer>
+          <InfoAssemble>
+            <ul>
+              <li>소개</li>
+              <li>•</li>
+              <li>도움</li>
+              <li>•</li>
+              <li>채용정보</li>
+              <li>•</li>
+              <li>홍보</li>
+              <li>•</li>
+              <li>API</li>
+              <li>•</li>
+              <li>위치</li>
+            </ul>
+          </InfoAssemble>
+          <CopyRight>@ 2022 WANSTAGRAM FROM TWN</CopyRight>
+        </Footer>
       </Container>
     </>
   );
 };
-const ImgUserProfile = styled.img`
-  background-image: url(${imgUserProfile});
+
+const ImgMyProfile = styled.img`
+  background-image: url(${ImgUserProfile});
   background-size: 56px;
   background-position: center;
   border-radius: 50%;
   width: 56px;
   height: 56px;
+`;
 
-  //해드의 이미지프로필 속성을 기대로 쓰기위해서 가져오고
-  // 스타일컴포넌트 css를 적용해서 부모요소를 상속후 변경함.
-  ${({ small }) =>
-    small &&
-    css`
-      width: 32px;
-      height: 32px;
-    `}
+const ImgProfile = styled.img`
+  background-size: 56px;
+  background-position: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
 `;
 const Container = styled.div`
   height: 500px;
-  background: #fff;
+  background: #fafafa;
   position: sticky;
-  top: 90px;
+  top: 110px;
 `;
 
 const Head = styled.div`
@@ -70,6 +87,7 @@ const Info = styled.div`
   display: flex;
   align-items: start;
   flex-direction: column;
+  justify-content: center;
   margin: 0 0 0 12px;
   flex: 1;
 `;
@@ -90,6 +108,7 @@ const BtnOtherId = styled.button`
   color: #0095f6;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-weight: 600;
 `;
 
@@ -97,7 +116,9 @@ const Body = styled.div``;
 const Recommend = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 12px;
+  padding-bottom: 4px;
+  padding-top: 4px;
 `;
 
 const Span = styled.div`
@@ -110,12 +131,35 @@ const BtnAll = styled.button`
   font-size: 12px;
   font-weight: 600;
 `;
-const Users = styled.div``;
+const Users = styled.div`
+  padding: 8px 0 8px;
+`;
 
 const Footer = styled.div``;
 
 const Shorts = styled.div`
   display: flex;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  padding-left: 8px;
+`;
+
+const InfoAssemble = styled.div`
+  color: #c7c7c7;
+  font-size: 11px;
+  max-width: 100%;
+  margin-bottom: 16px;
+  ul {
+    li {
+      display: inline-block;
+      margin: 0 2.7px;
+    }
+  }
+`;
+
+const CopyRight = styled.div`
+  color: #c7c7c7;
+  font-size: 11px;
 `;
 
 export default MainRight;

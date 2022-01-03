@@ -1,27 +1,27 @@
-import { Id1, Id2, Id3 } from "../assets/images/profile";
+import { react, js, jQuery } from "../assets/images/profile";
 
 const shortsList = [
   {
     id: 1,
     user: {
-      name: "숑아",
-      profileImage: Id1,
+      name: "React",
+      profileImage: react,
     },
   },
 
   {
     id: 2,
     user: {
-      name: "박가가",
-      profileImage: Id2,
+      name: "JavaScript",
+      profileImage: js,
     },
   },
 
   {
     id: 3,
     user: {
-      name: "텨다",
-      profileImage: Id3,
+      name: "jQuery",
+      profileImage: jQuery,
     },
   },
 ];

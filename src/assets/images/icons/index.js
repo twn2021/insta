@@ -11,6 +11,7 @@ import { ReactComponent as ImgImoticon } from "./imoticon.svg";
 import { ReactComponent as ImgDropdownProfile } from "./dropdownprofile.svg";
 import { ReactComponent as ImgDropdownSet } from "./dropdownset.svg";
 import { ReactComponent as ImgModalBack } from "./modalback.svg";
+import { ReactComponent as ImgOption } from "./option.svg";
 
 import Magnifier from "./magnifier.png";
 
@@ -28,4 +29,5 @@ export {
   ImgDropdownProfile,
   ImgDropdownSet,
   ImgModalBack,
+  ImgOption,
 };
