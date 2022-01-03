@@ -13,6 +13,10 @@ import { ReactComponent as ImgDropdownSet } from "./dropdownset.svg";
 import { ReactComponent as ImgModalBack } from "./modalback.svg";
 import { ReactComponent as ImgOption } from "./option.svg";
 
+import { ReactComponent as ImgPosting } from "./posting.svg";
+import { ReactComponent as ImgMovie } from "./movie.svg";
+import { ReactComponent as ImgTag } from "./tag.svg";
+
 import Magnifier from "./magnifier.png";
 
 export {
@@ -30,4 +34,7 @@ export {
   ImgDropdownSet,
   ImgModalBack,
   ImgOption,
+  ImgPosting,
+  ImgMovie ,
+  ImgTag,
 };

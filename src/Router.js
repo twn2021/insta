@@ -12,6 +12,7 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/editProfile" element={<EditProfile />} />
+        {/* 라우터 패치 네임은 소문자로 시작해야함 */}
       </Routes>
     </BrowserRouter>
   );
