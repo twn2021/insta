@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import {
   ImgHome,
@@ -49,7 +49,9 @@ const TopNav = () => {
           </SearchWrapper>
           <Nav>
             <NavIconWrapper>
-              <ImgHome alt="홈" />
+              <Link to="/Main">
+                <ImgHome alt="홈" />
+              </Link>
             </NavIconWrapper>
 
             <NavIconWrapper>
@@ -82,6 +84,8 @@ const TopNav = () => {
       </Header>
       {showModal && <ModalAddPost onClose={() => setShowModal(false)} />}
       {/* 모달에드포스트jsx에 onClose라는 이름의 프롭스로 setshowmodal을 false로 만들어주는 함수를 보내준다 */}
+
+      <Outlet />
     </>
   );
 };

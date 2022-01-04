@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { TopNav, ShortsList, PostList, MainRight } from "../organisms";
+import { ShortsList, PostList, MainRight } from "../organisms";
 
 import shortsList from "../../datas/shorts";
 import postList from "../../datas/posts";
@@ -10,7 +10,6 @@ const Main = () => {
   return (
     <div>
       <Page>
-        <TopNav />
         <PageWrapper>
           <Left>
             <ShortsList data={shortsList} />
