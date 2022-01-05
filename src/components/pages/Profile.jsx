@@ -52,7 +52,7 @@ const Profile = () => {
           {/* NavLink 첫페이지는 end to 로 지정 */}
           <CustomLink end to="/profile">
             <Menu>
-              <ImgPosting />
+              <ImgPosting alt="이유는 모르겠고. 어느순간부터 같이 색상이 변경됨"/>
               게시물
             </Menu>
           </CustomLink>
@@ -61,10 +61,10 @@ const Profile = () => {
             <Menu>
               <ActiveIcon>
                 <ImgBookMarkFill width="12" height="12" />
-              </ActiveIcon>{" "}
+              </ActiveIcon>
               <InActiveIcon>
-                <ImgBookMark width="12" height="12" />
-              </InActiveIcon>{" "}
+                <ImgBookMark  width="12" height="12" />
+              </InActiveIcon>
               저장됨
             </Menu>
           </CustomLink>
@@ -72,16 +72,15 @@ const Profile = () => {
           <CustomLink to="/profile/tagged">
             <Menu>
             <ActiveIcon>
-            <ImgTagFill/>
+            <ImgTagFill />
              </ActiveIcon>
             <InActiveIcon>
-              <ImgTag/>
-            </InActiveIcon>
-             
               <ImgTag />
+            </InActiveIcon>
               태그됨
             </Menu>
           </CustomLink>
+
         </Content>
         <Outlet />
       </PageMain>

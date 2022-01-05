@@ -37,12 +37,12 @@ const ModalAddPost = ({ onClose }) => {
         <Head>새 게시물 만들기</Head>
         <Main>
           <ImgModalBack />
-          <Span>사진과 동영상을 여기에 끌어다 놓으세요.</Span>
+          <Span>사진과 동영상을 여기에 끌어다 놓을수는 없어요.</Span>
           <Button onClick={() => fileEl.current.click()}>
             {/* 버튼을 클릭하면 fileEl을 클릭하는 함수를 실행시킨다. */}
             {/* fileEl은 input 테그이고 ref로 버튼과 인풋을 서로 연결시켜준것 */}
             컴퓨터에서 선택 <br/>
-           <BtnSpan>(미리보기 가능)</BtnSpan>
+           <BtnSpan>(미리보기는 가능)</BtnSpan>
           </Button>
           <input
             type="file"
@@ -83,6 +83,7 @@ const Container = styled.div`
 
 const Span = styled.span`
   font-weight: 200;
+  margin: 10px;
 `;
 
 const BtnSpan = styled.span`

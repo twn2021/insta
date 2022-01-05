@@ -28,7 +28,9 @@ const Login = () => {
                 <InputText placeholder="비밀번호" />
               </InputTextWrapper>
               <BtnSubmitWrapper>
+                <Link to= "/main">
                 <BtnSubmit>로그인</BtnSubmit>
+                </Link>
               </BtnSubmitWrapper>
               <Or />
               {/* 모큘 or.jsx로 보냄 */}

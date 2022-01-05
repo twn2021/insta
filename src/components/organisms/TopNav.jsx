@@ -6,6 +6,7 @@ import {
   ImgExplore,
   ImgAddPost,
   ImgActivity,
+  ImgActivityFill,
   ImgInbox,
 } from "../../assets/images/icons";
 
@@ -17,9 +18,15 @@ import ProfileDropdown from "./ProfileDropdown";
 import ModalAddPost from "../organisms/ModalAddPost";
 
 const TopNav = () => {
-  // 프로필 드롭다운
+  // 프로필 드롭다운1
   const [showDropdown, setShowDropdown] = useState(false);
 
+  //엑티비티 드롭다운
+  const [showActivity, setShowActivity] = useState(false);
+
+
+
+ // 프로필 드롭다운2
   const dropdownEl = useRef(null);
   useEffect(() => {
     const onClick = (e) => {
@@ -48,18 +55,25 @@ const TopNav = () => {
             <SearchInput placeholder="검색" />
           </SearchWrapper>
           <Nav>
-            <NavIconWrapper>
-              <Link to="/Main">
-                <ImgHome alt="홈" />
-              </Link>
-            </NavIconWrapper>
 
-            {/* <ActiveIcon>
-              <ImgHome />
-            </ActiveIcon>
-            <InActiveIcon>
+            <NavIconWrapper>
+              <CustomLink to ="/main">
+              <ActiveIcon>
+              {showActivity || showModalAddPost ? (
               <ImgHomeStroke />
-            </InActiveIcon> */}
+              ) : (
+              <ImgHome alt="홈" />
+              ) }
+              </ActiveIcon>
+              
+              <InActivtIcon>
+                <ImgHomeStroke />
+              </InActivtIcon>
+
+              </CustomLink>
+
+
+            </NavIconWrapper>
 
             <NavIconWrapper>
               <ImgInbox alt="다이렉트메시지" />
@@ -76,17 +90,26 @@ const TopNav = () => {
               <ImgExplore alt="사람찾기" />
             </NavIconWrapper>
 
+            
             <NavIconWrapper>
-              <ImgActivity alt="활동피드" />
+              <DropdownWrapper>
+                {showActivity ? (
+                <ImgActivityFill onClick={() => setShowActivity(false)} alt="활동피드색칠" />
+                ) : ( 
+                <ImgActivity onClick={() => setShowActivity(true)} alt="활동피드" /> 
+                )}
+                {showActivity && <ProfileDropdown />}
+              </DropdownWrapper>
             </NavIconWrapper>
+            
 
             <NavIconWrapper>
-              <DropdoownWrapper>
-                {/* <ImgActivityFill onclick={() => setShowActivity(false)} />
-                ref= {dropdownEl}> */}
-                <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
+              <DropdownWrapper>
+                <ImgProfile 
+                ref= {dropdownEl}
+                onClick={() => setShowDropdown(!showDropdown)} />
                 {showDropdown && <ProfileDropdown />}
-              </DropdoownWrapper>
+              </DropdownWrapper>
             </NavIconWrapper>
           </Nav>
         </HeadWrapper>
@@ -174,8 +197,27 @@ const ImgProfile = styled.img`
   height: 24px;
 `;
 
-const DropdoownWrapper = styled.div`
+const DropdownWrapper = styled.div`
   position: relative;
+`;
+
+const ActiveIcon = styled.span``;
+const InActiveIcon = styled.span``;
+const CustomLink = styled(NavLink)`
+  ${ActiveIcon} {
+    display: none;
+  }
+  
+  &.active {
+    ${ActiveIcon} {
+      display: block;
+    }
+    ${InActiveIcon} {
+      display: none;
+    }
+  }
+  //커스텀링크중 active가 붙은 자식요소만 선택
+  //활성화시 엑티브가 출력 인엑티브는 숨김
 `;
 
 export default TopNav;

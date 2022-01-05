@@ -4,6 +4,7 @@ import { ReactComponent as ImgInbox } from "./paperplane.svg";
 import { ReactComponent as ImgAddPost } from "./add.svg";
 import { ReactComponent as ImgExplore } from "./compass.svg";
 import { ReactComponent as ImgActivity } from "./heart.svg";
+import { ReactComponent as ImgActivityFill } from "./heartFill.svg";
 import { ReactComponent as ImgMore } from "./imgMore.svg";
 import { ReactComponent as ImgComment } from "./comment.svg";
 import { ReactComponent as ImgBookMark } from "./bookmark.svg";
@@ -28,6 +29,7 @@ export {
   ImgExplore,
   ImgAddPost,
   ImgActivity,
+  ImgActivityFill,
   ImgInbox,
   ImgMore,
   ImgComment,

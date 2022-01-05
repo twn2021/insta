@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+// import {Form} from "../../../images/assets/images"
 
 const Index = () => {
   return (
     <List>
+      {/* <Item>
+        <Form/>
+      </Item> */}
       <Item>
         <Image src="https://cdn.topstarnews.net/news/photo/201802/364393_7891_3546.jpg" />
       </Item>
