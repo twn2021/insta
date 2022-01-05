@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login, Signup, Main, Landing, EditProfile } from "./components/pages";
+import { Login, Signup, Main, Landing, Profile } from "./components/pages";
 import {
   TopNav,
   ProfileIndex,
@@ -10,13 +10,12 @@ import {
 const Router = () => {
   return (
     <BrowserRouter>
-
       <Routes>
         <Route path="/" element={<Landing />} />
-{/* 중첩라우팅 (Outlet) 자식라우터 생성시 해당 jsx에 Outlet 을 선언해줘야 자식라우터가 출력됨*/}       
+        {/* 중첩라우팅 (Outlet) 자식라우터 생성시 해당 jsx에 Outlet 을 선언해줘야 자식라우터가 출력됨*/}
         <Route path="/" element={<TopNav />}>
           <Route path="main" element={<Main />} />
-          <Route path="profile" element={<EditProfile />}>
+          <Route path="profile" element={<Profile />}>
             <Route index element={<ProfileIndex />} />
             <Route path="saved" element={<ProfileSaved />} />
             <Route path="tagged" element={<ProfileTagged />} />

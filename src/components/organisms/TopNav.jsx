@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {
   ImgHome,
@@ -54,6 +54,13 @@ const TopNav = () => {
               </Link>
             </NavIconWrapper>
 
+            {/* <ActiveIcon>
+              <ImgHome />
+            </ActiveIcon>
+            <InActiveIcon>
+              <ImgHomeStroke />
+            </InActiveIcon> */}
+
             <NavIconWrapper>
               <ImgInbox alt="다이렉트메시지" />
             </NavIconWrapper>
@@ -74,10 +81,12 @@ const TopNav = () => {
             </NavIconWrapper>
 
             <NavIconWrapper>
-              <DropdoownWrapper ref={dropdownEl}>
+              {/* <DropdoownWrapper>
+                <ImgActivityFill onclick={() => setShowActivity(false)} />
+                ref={dropdownEl}>
                 <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
                 {showDropdown && <ProfileDropdown />}
-              </DropdoownWrapper>
+              </DropdoownWrapper> */}
             </NavIconWrapper>
           </Nav>
         </HeadWrapper>

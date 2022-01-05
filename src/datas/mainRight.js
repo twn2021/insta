@@ -15,7 +15,7 @@ const mainRight = [
     user: {
       name: "JavaScript",
       profileImage: js,
-      info: "홈페이지 제작",
+      info: "펜페이지 제작",
     },
   },
 
