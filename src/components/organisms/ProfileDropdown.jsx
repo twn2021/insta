@@ -53,8 +53,8 @@ const ProfileDropdown = () => {
   );
 };
 
-const ActiveIcon = styled.span``;
-const InActiveIcon = styled.span``;
+// const ActiveIcon = styled.span``;
+// const InActiveIcon = styled.span``;
 
 const Wrapper = styled.div`
   box-shadow: 0 0 5px 1px rgb(0 0 0 /10%);

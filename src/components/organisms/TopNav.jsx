@@ -81,12 +81,12 @@ const TopNav = () => {
             </NavIconWrapper>
 
             <NavIconWrapper>
-              {/* <DropdoownWrapper>
-                <ImgActivityFill onclick={() => setShowActivity(false)} />
-                ref={dropdownEl}>
+              <DropdoownWrapper>
+                {/* <ImgActivityFill onclick={() => setShowActivity(false)} />
+                ref= {dropdownEl}> */}
                 <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
                 {showDropdown && <ProfileDropdown />}
-              </DropdoownWrapper> */}
+              </DropdoownWrapper>
             </NavIconWrapper>
           </Nav>
         </HeadWrapper>

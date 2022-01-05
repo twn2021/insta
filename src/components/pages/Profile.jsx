@@ -6,6 +6,8 @@ import {
   ImgTag,
   ImgPosting,
   ImgBookMark,
+  ImgTagFill,
+  ImgBookMarkFill,
 } from "../../assets/images/icons";
 import { Outlet, NavLink } from "react-router-dom";
 //리엑트라우터돔의 부과기능인 NavLink는
@@ -47,6 +49,7 @@ const Profile = () => {
         </Header>
 
         <Content>
+          {/* NavLink 첫페이지는 end to 로 지정 */}
           <CustomLink end to="/profile">
             <Menu>
               <ImgPosting />
@@ -56,13 +59,25 @@ const Profile = () => {
 
           <CustomLink to="/profile/saved">
             <Menu>
-              <ImgBookMark width="12" />
+              <ActiveIcon>
+                <ImgBookMarkFill width="12" height="12" />
+              </ActiveIcon>{" "}
+              <InActiveIcon>
+                <ImgBookMark width="12" height="12" />
+              </InActiveIcon>{" "}
               저장됨
             </Menu>
           </CustomLink>
 
           <CustomLink to="/profile/tagged">
             <Menu>
+            <ActiveIcon>
+            <ImgTagFill/>
+             </ActiveIcon>
+            <InActiveIcon>
+              <ImgTag/>
+            </InActiveIcon>
+             
               <ImgTag />
               태그됨
             </Menu>
@@ -73,12 +88,6 @@ const Profile = () => {
     </UserProfile>
   );
 };
-
-const MenuBar = styled.div``;
-
-const ActiveIcon = styled.div``;
-
-const InActiveIcon = styled.div``;
 
 const UserProfile = styled.div`
   /* 페이지 */
@@ -106,7 +115,6 @@ const LeftProfile = styled.div`
   flex-grow: 1;
   text-align: center;
   justify-content: center;
-  margin: 0px 30px 0px 0px;
 `;
 
 const ImgMyProfile = styled.img`
@@ -125,7 +133,7 @@ const IdEdit = styled.div`
   /* 헤더라이트1 */
   display: flex;
   align-items: center;
-  margin: 0 0 20px;
+  margin-bottom: 20px;
 `;
 const IdName = styled.span`
   /* 유저네임 */
@@ -169,8 +177,6 @@ const DD = styled.dd`
 
 const LinkEdit = styled.div`
   /* 해더라이트3 */
-  display: flex;
-  flex-direction: column;
 `;
 
 const SpanId = styled.span`
@@ -192,6 +198,9 @@ const Content = styled.nav`
   a + a {
     margin-left: 60px;
   }
+
+  /* 게시물과 보더탑이 붙어 있어서 마진탑을 주면 
+  A+A 에 넣으면 저장됨과 태그됨만 적용이 됨 ???????????????????????????*/
 `;
 
 const Menu = styled.div`
@@ -201,47 +210,33 @@ const Menu = styled.div`
   justify-content: center;
 `;
 
+const ActiveIcon = styled.span``;
+const InActiveIcon = styled.span``;
+
 const CustomLink = styled(NavLink)`
   font-size: 12px;
   color: #8e8e8e;
+  ${ActiveIcon} {
+      display: none;
+    }
+ 
   &.active {
+    margin-top: -1px;
     color: #0067bb;
+    font-weight: 600;
+    border-top: 1px solid #262626;
+    ${ActiveIcon} {
+      display: block;
+    }
+    ${InActiveIcon} {
+      display: none;
+    }
   }
 `;
 
-// const Menu = styled.div`
-//
-//   border-top: 1px solid #8e8e8e;
-//   color: #8e8e8e;
-//   font-size: 12px;
-
-//   span {
-//     font-size: 12px;
-//     font-weight: 600;
-//     color: #8e8e8e;
-//     align-items: center;
-//     justify-content: space-between;
-//   }
-// `;
 
 // 탑네브 네브링크 상속받아옴
 
-// const ActiveIcon = styled.span``;
 
-// const InActiveIcon = styled.span``;
-
-// const CustomLink = styled(NavLink)`
-//   ${InActiveIcon} {
-//     display: none;
-//   }
-
-//   &.active {
-//     ${ActiveIcon} {
-//       display: block;
-//     }
-//     ${InActive} {
-//     }
-//   }
-// `;
 
 export default Profile;

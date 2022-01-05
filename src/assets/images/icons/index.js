@@ -17,6 +17,9 @@ import { ReactComponent as ImgPosting } from "./posting.svg";
 import { ReactComponent as ImgMovie } from "./movie.svg";
 import { ReactComponent as ImgTag } from "./tag.svg";
 
+import { ReactComponent as ImgBookMarkFill} from "./bookmarkFill.svg";
+import { ReactComponent as ImgTagFill } from "./tagFill.svg";
+
 import Magnifier from "./magnifier.png";
 
 export {
@@ -37,4 +40,6 @@ export {
   ImgPosting,
   ImgMovie ,
   ImgTag,
+  ImgBookMarkFill,
+  ImgTagFill,
 };
