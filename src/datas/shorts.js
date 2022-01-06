@@ -6,6 +6,7 @@ const shortsList = [
     user: {
       name: "React",
       profileImage: react,
+      link: "/profile",
     },
   },
 

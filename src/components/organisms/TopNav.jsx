@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, Outlet, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {
@@ -26,19 +26,6 @@ const TopNav = () => {
   //엑티비티 드롭다운
   const [showActivity, setShowActivity] = useState(false);
 
-  // 프로필 드롭다운2
-  const dropdownEl = useRef(null);
-  useEffect(() => {
-    const onClick = (e) => {
-      if (dropdownEl.current && !dropdownEl.current.contains(e.target)) {
-        setShowDropdown(false);
-      }
-    };
-    document.body.addEventListener("click", onClick);
-    return () => {
-      document.body.removeEventListener("click", onClick);
-    };
-  }, [dropdownEl]);
 
   //새 게시물 모달
   const [showModal, setShowModal] = useState(false);
@@ -99,24 +86,24 @@ const TopNav = () => {
                     alt="하트"
                   />
                 )}
-                {showActivity && <LikeDropdown />}
+
+{/*라이크드롭다운에 백드롭을 만들어서 쇼엑티비티를 펄스로 만드는 온클로즈 프롭스를 전송*/}
+                {showActivity && <LikeDropdown onClose={() => setShowActivity(false)} />}
               </DropdownWrapper>
             </NavIconWrapper>
 
             <NavIconWrapper>
               <DropdownWrapper>
-                <ImgProfile
-                  ref={dropdownEl}
-                  onClick={() => setShowDropdown(!showDropdown)}
-                />
-                {showDropdown && <ProfileDropdown />}
+                {showDropdown && <ProfileCircle /> }
+                <ImgProfile onClick={() => setShowDropdown(!showDropdown)} />
+                {showDropdown && <ProfileDropdown onClose={() => setShowDropdown(false)} />}
               </DropdownWrapper>
             </NavIconWrapper>
           </Nav>
         </HeadWrapper>
       </Header>
       {showModal && <ModalAddPost onClose={() => setShowModal(false)} />}
-      {/* 모달에드포스트jsx에 onClose라는 이름의 프롭스로 setshowmodal을 false로 만들어주는 함수를 보내준다 */}
+{/* 모달에드포스트jsx에 onClose라는 이름의 프롭스로 setshowmodal을 false로 만들어주는 함수를 보내준다 */}
 
       <Outlet />
     </>
@@ -218,8 +205,18 @@ const CustomLink = styled(NavLink)`
       display: none;
     }
   }
-  //커스텀링크중 active가 붙은 자식요소만 선택
+  //커스텀링크중 active 클래스 가 붙은 자식요소만 선택
   //활성화시 엑티브가 출력 인엑티브는 숨김
 `;
+
+ const ProfileCircle = styled.div`
+ border: 1px solid #046b00;
+ border-radius: 50%;
+ height: 28px;
+ width: 28px;
+ position: absolute;
+ top: -2px;
+ left: -2px;
+ `;
 
 export default TopNav;

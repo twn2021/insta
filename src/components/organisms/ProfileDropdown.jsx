@@ -31,8 +31,10 @@ const itemList = [
   },
 ];
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({onClose}) => {
   return (
+    <div onClick={onClose}>
+    <Backdrop />
     <Wrapper>
       <Box />
       <Container>
@@ -50,11 +52,9 @@ const ProfileDropdown = () => {
         </Link>
       </Container>
     </Wrapper>
-  );
+    </div>
+  )
 };
-
-// const ActiveIcon = styled.span``;
-// const InActiveIcon = styled.span``;
 
 const Wrapper = styled.div`
   box-shadow: 0 0 5px 1px rgb(0 0 0 /10%);
@@ -62,6 +62,7 @@ const Wrapper = styled.div`
   right: -20px;
   top: 40px;
   border-radius: 6px;
+  z-index: 11;
 `;
 
 const Box = styled.div`
@@ -101,6 +102,15 @@ const HR = styled.li`
   border: 0;
   height: 1px;
   margin: 0;
+`;
+
+const Backdrop = styled.div`
+width: 100vw;
+height: 100vh;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 10;
 `;
 
 export default ProfileDropdown;
