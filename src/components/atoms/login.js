@@ -35,6 +35,7 @@ export const BtnSubmit = styled.button`
   color: #fff;
   border: 1px solid transparent;
   padding: 5px 9px;
+  width: 100%;
 `;
 
 export const PageWrapper = styled.div`

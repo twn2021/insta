@@ -3,6 +3,7 @@ import { Link, Outlet, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {
   ImgHome,
+  ImgHomeStroke,
   ImgExplore,
   ImgAddPost,
   ImgActivity,
@@ -15,6 +16,7 @@ import { Magnifier } from "../../assets/images/icons";
 import { ImgUserProfile } from "../../assets/images/profile";
 
 import ProfileDropdown from "./ProfileDropdown";
+import LikeDropdown from "./LikeDropdown";
 import ModalAddPost from "../organisms/ModalAddPost";
 
 const TopNav = () => {
@@ -24,9 +26,7 @@ const TopNav = () => {
   //엑티비티 드롭다운
   const [showActivity, setShowActivity] = useState(false);
 
-
-
- // 프로필 드롭다운2
+  // 프로필 드롭다운2
   const dropdownEl = useRef(null);
   useEffect(() => {
     const onClick = (e) => {
@@ -55,24 +55,20 @@ const TopNav = () => {
             <SearchInput placeholder="검색" />
           </SearchWrapper>
           <Nav>
-
             <NavIconWrapper>
-              <CustomLink to ="/main">
-              <ActiveIcon>
-              {showActivity || showModalAddPost ? (
-              <ImgHomeStroke />
-              ) : (
-              <ImgHome alt="홈" />
-              ) }
-              </ActiveIcon>
-              
-              <InActivtIcon>
-                <ImgHomeStroke />
-              </InActivtIcon>
+              <CustomLink to="/main">
+                <ActiveIcon>
+                  {showActivity || showModal ? (
+                    <ImgHomeStroke alt="빈홈" />
+                  ) : (
+                    <ImgHome alt="홈" />
+                  )}
+                </ActiveIcon>
 
+                <InActiveIcon>
+                  <ImgHomeStroke />
+                </InActiveIcon>
               </CustomLink>
-
-
             </NavIconWrapper>
 
             <NavIconWrapper>
@@ -90,24 +86,29 @@ const TopNav = () => {
               <ImgExplore alt="사람찾기" />
             </NavIconWrapper>
 
-            
             <NavIconWrapper>
               <DropdownWrapper>
                 {showActivity ? (
-                <ImgActivityFill onClick={() => setShowActivity(false)} alt="활동피드색칠" />
-                ) : ( 
-                <ImgActivity onClick={() => setShowActivity(true)} alt="활동피드" /> 
+                  <ImgActivityFill
+                    onClick={() => setShowActivity(false)}
+                    alt="하트채움"
+                  />
+                ) : (
+                  <ImgActivity
+                    onClick={() => setShowActivity(true)}
+                    alt="하트"
+                  />
                 )}
-                {showActivity && <ProfileDropdown />}
+                {showActivity && <LikeDropdown />}
               </DropdownWrapper>
             </NavIconWrapper>
-            
 
             <NavIconWrapper>
               <DropdownWrapper>
-                <ImgProfile 
-                ref= {dropdownEl}
-                onClick={() => setShowDropdown(!showDropdown)} />
+                <ImgProfile
+                  ref={dropdownEl}
+                  onClick={() => setShowDropdown(!showDropdown)}
+                />
                 {showDropdown && <ProfileDropdown />}
               </DropdownWrapper>
             </NavIconWrapper>
@@ -151,8 +152,8 @@ const SearchWrapper = styled.div`
   height: 36px;
   width: 268px;
   min-width: 125px;
-  background: #fafafa;
-  border: 1px solid #dbdbdb;
+  background: #efefef;
+  border: none;
   border-radius: 3px;
   position: relative;
   //부모요소에 포지션릴레이티브를 줘야 자식의 돋보기 위치 조절가능.
@@ -164,12 +165,13 @@ const SearchInput = styled.input`
   height: 100%;
   margin-left: 36px;
   margin-top: 1px;
+  font-size: 16px;
 `;
 
 const IconSearch = styled.span`
   background-image: url(${Magnifier});
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   display: inline-block;
   background-size: cover;
   position: absolute;
@@ -207,7 +209,7 @@ const CustomLink = styled(NavLink)`
   ${ActiveIcon} {
     display: none;
   }
-  
+
   &.active {
     ${ActiveIcon} {
       display: block;

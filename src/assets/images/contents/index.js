@@ -1,4 +1,4 @@
-import { Form }  from "./from.png";
+import Form from "./form.jpg";
 
 export { Form };
 

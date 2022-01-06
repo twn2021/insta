@@ -35,6 +35,7 @@ const PageWrapper = styled.div`
   max-width: 975px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
 `;
 const Left = styled.div`
   margin-right: 28px;
@@ -45,6 +46,10 @@ const Left = styled.div`
 `;
 const Right = styled.div`
   flex: 1;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 export default Main;

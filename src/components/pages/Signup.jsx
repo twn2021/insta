@@ -49,7 +49,7 @@ const Signup = () => {
               <BtnSubmitWrapper>
                 <BtnSubmit>Facebook으로 로그인</BtnSubmit>
               </BtnSubmitWrapper>
-                <Or />
+              <Or />
               <InputTextWrapper>
                 <InputText
                   placeholder="성명"
@@ -110,6 +110,9 @@ const LoginWrapper = styled.div`
   text-align: center;
   font-size: 14px;
   margin: 15px;
+  a {
+    color: #046b00;
+  }
 `;
 
 const Massage = styled.div`

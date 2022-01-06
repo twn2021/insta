@@ -1,4 +1,6 @@
-import { ReactComponent as ImgHome } from "./home-fill.svg";
+import { ReactComponent as ImgHome } from "./homeFill.svg";
+import { ReactComponent as ImgHomeStroke } from "./home.svg";
+
 // SVG를 리엑트컴퍼넌츠 처럼 사용하기 위해서 {ReactComponent as} 작성
 import { ReactComponent as ImgInbox } from "./paperplane.svg";
 import { ReactComponent as ImgAddPost } from "./add.svg";
@@ -18,13 +20,14 @@ import { ReactComponent as ImgPosting } from "./posting.svg";
 import { ReactComponent as ImgMovie } from "./movie.svg";
 import { ReactComponent as ImgTag } from "./tag.svg";
 
-import { ReactComponent as ImgBookMarkFill} from "./bookmarkFill.svg";
+import { ReactComponent as ImgBookMarkFill } from "./bookmarkFill.svg";
 import { ReactComponent as ImgTagFill } from "./tagFill.svg";
 
 import Magnifier from "./magnifier.png";
 
 export {
   ImgHome,
+  ImgHomeStroke,
   Magnifier,
   ImgExplore,
   ImgAddPost,
@@ -40,7 +43,7 @@ export {
   ImgModalBack,
   ImgOption,
   ImgPosting,
-  ImgMovie ,
+  ImgMovie,
   ImgTag,
   ImgBookMarkFill,
   ImgTagFill,

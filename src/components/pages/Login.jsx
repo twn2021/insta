@@ -28,8 +28,8 @@ const Login = () => {
                 <InputText placeholder="비밀번호" />
               </InputTextWrapper>
               <BtnSubmitWrapper>
-                <Link to= "/main">
-                <BtnSubmit>로그인</BtnSubmit>
+                <Link to="/main">
+                  <BtnSubmit>로그인</BtnSubmit>
                 </Link>
               </BtnSubmitWrapper>
               <Or />
@@ -61,6 +61,7 @@ const FacebookLogin = styled.div`
   text-align: center;
   margin-top: 12px;
 `;
+
 const ForgetPassword = styled.div`
   color: #00376b;
   font-size: 12px;
@@ -71,6 +72,10 @@ const ForgetPassword = styled.div`
 const SignupWrapper = styled.div`
   margin: 15px;
   text-align: center;
+
+  a {
+    color: #046b00;
+  }
 `;
 
 const Footer = styled.footer`
