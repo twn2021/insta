@@ -1,15 +1,33 @@
 import styled from "styled-components";
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import  { Wh, Rok}  from "../../assets/images/profile";
 
 const LikeDropdown = ({ onClose }) => {
   return (
     <>
       <Backdrop onClick={onClose} />
       <Wrapper>
-        <Header>프로필</Header>
-        <Body>문구</Body>
-        <Footer>컨텐츠</Footer>
+      <Box />
+      <Container >
+          <Header>
+            <Pic/>
+          </Header>
+          <Body>대한민국 청와대 님이 회원님의 게시물을 좋아합니다. </Body>
+          <Footer>
+            <Content/>
+          </Footer>
+      </Container >
+      <Container >
+          <Header>
+            <Pic/>
+          </Header>
+          <Body>대한민국 청와대 님이 회원님의 게시물을 좋아합니다. </Body>
+          <Footer>
+            <Content/>
+          </Footer>
+      </Container >
+
       </Wrapper>
     </>
   );
@@ -25,14 +43,61 @@ const Backdrop = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: #fff;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 /10%);
   position: absolute;
+  right: -20px;
+  top: 40px;
+  border-radius: 6px;
   z-index: 13;
 `;
 
-const Header = styled.div``;
+const Box = styled.div`
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 5px 1px rgb(0 0 0 /10%);
+  position: absolute;
+  top: -6px;
+  right: 25px;
+  background: #fff;
+`;
 
-const Body = styled.div``;
+const Container = styled.div`
+  position: relative;
+  width: 480px;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+`;
+
+const Header = styled.div`
+display: flex;
+`;
+
+const Pic = styled.img`
+width:44px;
+height: 44px;
+background-image: url(${Wh});
+border-radius: 50%;
+background-position: center;
+background-size: 44px;
+
+`;
+
+const Content = styled.img`
+background-image: url(${Rok});
+width:40px;
+height: 40px;
+`;
+
+const Body = styled.div`
+font-size: 14px;
+line-height: 18px;
+padding-left: 5px;
+margin-left: -5px;
+`;
 
 const Footer = styled.div``;
 
