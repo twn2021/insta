@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import imgDown from "../../assets/images/down.png";
-import imgUp from "../../assets/images/up.png";
+import imgDown from "../../assets/images/youtube/down.png";
+import imgUp from "../../assets/images/youtube/up.png";
 
 const Menu = ({ data, title, moreData, defaultCount = 999 }) => {
   // 드롭다운프로필 프롭스안에 있는 data 값을 받아오기 위해 {}를 사용한다.

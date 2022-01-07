@@ -1,8 +1,8 @@
 import styled, { keyframes } from "styled-components";
 import Backdrop from "./backdrop";
 import React, { useState } from "react";
-import imgLogo from "../../assets/images/youtube.png";
-import imgHamburger from "../../assets/images/ham.png";
+import imgLogo from "../../assets/images/youtube/youtube.png";
+import imgHamburger from "../../assets/images/youtube/ham.png";
 import Menu from "./Menu";
 import {
   sidebarMenuData1,

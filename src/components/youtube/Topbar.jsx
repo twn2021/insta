@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import DropdownProfile from "./DropdownProfile";
-import imgHamburger from "../../assets/images/ham.png";
-import imgLogo from "../../assets/images/youtube.png";
+import imgHamburger from "../../assets/images/youtube/ham.png";
+import imgLogo from "../../assets/images/youtube/youtube.png";
 
 export const Topbar = ({ onOpenSidebar }) => {
   const [showDropdownProfile, setshowDropdownProfile] = useState(false);
