@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ImgUserProfile } from "../../assets/images/profile";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MainRight = ({ data }) => {
   return (
@@ -14,7 +14,7 @@ const MainRight = ({ data }) => {
             <Name>TWNaka태와니</Name>
           </Info>
           <CustomLink to="/profile">
-          <BtnOtherId>전환</BtnOtherId>
+            <BtnOtherId>전환</BtnOtherId>
           </CustomLink>
         </Head>
         <Body>
@@ -166,6 +166,9 @@ const CopyRight = styled.div`
   font-size: 11px;
 `;
 
-const CustomLink = styled(NavLink)``;
+const CustomLink = styled(Link)`
+  display: flex;
+  align-items: center;
+`;
 
 export default MainRight;

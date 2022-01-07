@@ -1,5 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login, Signup, Main, Landing, Profile } from "./components/pages";
+import {
+  Login,
+  Signup,
+  Main,
+  Landing,
+  Profile,
+  Youtube,
+} from "./components/pages";
 import {
   TopNav,
   ProfileIndex,
@@ -23,6 +30,7 @@ const Router = () => {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/youtube" element={<Youtube />} />
       </Routes>
       {/* 라우터 패치 네임은 소문자로 시작해야함 */}
     </BrowserRouter>
