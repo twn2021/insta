@@ -7,7 +7,7 @@ const VideoList = ({data}) => {
         <>
         <Wrap>
         <Container>
-            {data.map(({id,title,view,timestamp,channelImage,channel,image,}) => (
+            {data.map(({id,title,views,timestamp,channelImage,channel,image,}) => (
             <Short key={id}>
                     <ChannelImage src={channelImage}/>
                 <Info>
@@ -20,9 +20,9 @@ const VideoList = ({data}) => {
                     </Avatar>
 
                     <Text >
-                        <Title src={title}/>
-                        <View src={view}/>
-                        <Timestamp src={timestamp}/>
+                        <Title>{title}</Title>
+                        <View>{views}</View>
+                        <Timestamp>{timestamp}</Timestamp>
                     </Text> 
                         
                     
