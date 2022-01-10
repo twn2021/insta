@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DropdownProfile from "./DropdownProfile";
 import imgHamburger from "../../assets/images/youtube/ham.png";
-import imgLogo from "../../assets/images/youtube/youtube.png";
+import { Youtube } from "../../assets/images/youtube";
 
 export const Topbar = ({ onOpenSidebar }) => {
   const [showDropdownProfile, setshowDropdownProfile] = useState(false);
@@ -15,7 +15,7 @@ export const Topbar = ({ onOpenSidebar }) => {
           src={imgHamburger}
           alr="hamburger"
         />
-        <ImgLogo src={imgLogo} alt="logo" />
+        <ImgLogo src={Youtube} alt="logo" />
         <SearchWrapper>
           <InputSearch placeholder="검색" />
           <BtnSearch>검색</BtnSearch>

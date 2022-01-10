@@ -1,7 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import Backdrop from "./backdrop";
 import React, { useState } from "react";
-import imgLogo from "../../assets/images/youtube/youtube.png";
+
+import { Youtube } from "../../assets/images/youtube";
+
 import imgHamburger from "../../assets/images/youtube/ham.png";
 import Menu from "./Menu";
 import {
@@ -16,7 +18,7 @@ const ModalSidebar = ({ onClose }) => {
   const [collapse, setCollapse] = useState(false);
   const handleClose = () => {
     setCollapse(true);
-    setTimeout(onClose, 300);
+    setTimeout(onClose, 300); // 닫힐때 0.3초 딜레이
   };
 
   return (
@@ -24,7 +26,7 @@ const ModalSidebar = ({ onClose }) => {
       <Sidebar collapse={collapse}>
         <Top>
           <ImgHamburger src={imgHamburger} alt="hamburger" />
-          <ImgLogo src={imgLogo} alt="logo" />
+          <ImgLogo src={Youtube} alt="logo" />
         </Top>
         <Bottom>
           <Menu data={sidebarMenuData1} />
@@ -68,6 +70,7 @@ const Top = styled.div`
   padding: 10px;
   display: flex;
   align-items: center;
+  height: 56px;
 `;
 
 const ImgLogo = styled.img`

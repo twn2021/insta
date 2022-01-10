@@ -70,7 +70,9 @@ const TopNav = () => {
             </NavIconWrapper>
 
             <NavIconWrapper>
-              <ImgExplore alt="사람찾기" />
+              <CustomLink to="/Youtube">
+              <ImgExplore alt="유투브" />
+              </CustomLink>
             </NavIconWrapper>
 
             <NavIconWrapper>

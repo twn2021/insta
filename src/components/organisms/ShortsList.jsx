@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-// Main.js에서 프롭스로 전달해준 data를 받아와서 비구조화 활당해준다.
+// shorts.js에서 프롭스로 전달해준 data를 받아와서 비구조화 활당해준다.
 //비구조화할당: 객체에서 값을 추출하는 문법 으로 {}를 사용한다.
 
 const ShortsList = ({ data }) => {
