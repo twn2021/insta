@@ -13,7 +13,7 @@ const VideoList = ({data}) => {
                 <Info>
 
                     <Avatar >
-                        <Channel src={channel} />
+                        <Channel>{channel}</Channel>
                         <Image src={image} />
 
                        

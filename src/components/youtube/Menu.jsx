@@ -63,14 +63,15 @@ const Item = styled.li`
   }
 `;
 const ImgItem = styled.img`
-  width: 42px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin-right: 16px;
 `;
 const ItemName = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 14px;
   /* 글씨가 화면을 넘어가면 ... 으로 표기 */
 `;
 
