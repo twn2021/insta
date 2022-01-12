@@ -16,8 +16,7 @@ const DropdownProfile = ({ onClose }) => {
       <Container ref={dropdownEl}>
         <Top>
           <TopLeft>
-            <ImgProfile alt="유투브 오른쪽 드롭다운 프로필사진"/>
-            {/* <ImgProfile src="http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg" /> */}
+            <ImgProfile />
           </TopLeft>
           <TopRight>
             <UserName>김태완</UserName>

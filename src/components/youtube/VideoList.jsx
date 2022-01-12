@@ -9,23 +9,26 @@ const VideoList = ({data}) => {
         <Container>
             {data.map(({id,title,views,timestamp,channelImage,channel,image,}) => (
             <Short key={id}>
-                    <ChannelImage src={channelImage}/>
+                <ChannelImage src={channelImage}/>
+
+
+
+
                 <Info>
-
-                    <Avatar >
-                        <Channel>{channel}</Channel>
+                    <MiniProfile>
                         <Image src={image} />
+                    </MiniProfile>
 
-                       
-                    </Avatar>
-
-                    <Text >
+                    <Text>
                         <Title>{title}</Title>
-                        <View>{views}</View>
-                        <Timestamp>{timestamp}</Timestamp>
+                        <Channel>{channel}</Channel>
+                        <Count>
+                            <View>{views}회</View>
+                            <Span>•</Span>
+                            <Timestamp>{timestamp}일 전</Timestamp>
+                        </Count>
                     </Text> 
-                        
-                    
+
                 </Info>
             </Short>
             ))}
@@ -37,54 +40,76 @@ const VideoList = ({data}) => {
 }; 
 
 
-const Container = styled.div`
-display: flex;
-flex-wrap: wrap;
-`;
-
-
 const Wrap = styled.div`
+width: 100%;
 background-color: #f9f9f9;
 padding: 40px 20px;
 padding-bottom: 0;
 `;
 
+const Container = styled.div`
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+`;
 
 const Info = styled.div`
 display: flex;
-margin-top: 10px;
 padding-right: 30px;
 `;
 
-
-
-const Avatar = styled.div`
+const MiniProfile = styled.div`
 `;
-
 
 const Text = styled.p`
 margin-left: 15px;
 `;
 
-
-
 const Short = styled.div`
 margin-bottom: 40px;
 width: 270px;
 `;
-const Title = styled.div``;
-const View = styled.div``;
-const Timestamp= styled.div``;
 
+const Title = styled.div`
+height: 48px;
+font-size: 14px;
+overflow: hidden;
+text-overflow: ellipsis;
+`;
 
 const ChannelImage = styled.img`
 height: 140px;
 width: 250px;
 `;
-const Channel = styled.p``;
 
+const Count = styled.div`
+display: flex;
+font-size: 12px;
+`;
+
+const Channel = styled.div`
+font-size: 12px;
+color: #606060;
+`;
+
+const View = styled.div`
+color: #606060;
+`;
+
+const Span  = styled.span`
+color: #606060;
+margin: 0 4px;
+`;
+
+const Timestamp= styled.div`
+color: #606060;
+`;
 
 const Image = styled.img`
+width: 36px;
+height: 36px;
+border-radius: 50%;
+margin: 12px 12px 0 0;
 `;
 
 export default VideoList; 

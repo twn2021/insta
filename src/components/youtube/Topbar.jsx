@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DropdownProfile from "./DropdownProfile";
 import imgHamburger from "../../assets/images/youtube/ham.png";
-import { Youtube } from "../../assets/images/youtube";
+import { Youtube, Goodok, Mymovie, Showlecord } from "../../assets/images/youtube";
+import { ImgUserProfile } from "../../assets/images/profile";
+import { Magnifier } from "../../assets/images/icons"
 
 export const Topbar = ({ onOpenSidebar }) => {
   const [showDropdownProfile, setshowDropdownProfile] = useState(false);
@@ -10,31 +12,41 @@ export const Topbar = ({ onOpenSidebar }) => {
   return (
     <>
       <Container>
-        <ImgHamburger
-          onClick={onOpenSidebar}
-          src={imgHamburger}
-          alr="hamburger"
-        />
-        <ImgLogo src={Youtube} alt="logo" />
+ 
+          <ImgHamburger
+            onClick={onOpenSidebar}
+            src={imgHamburger}
+            alt="hamburger"
+          />
+          <ImgLogo src={Youtube} alt="logo" />
+
         <SearchWrapper>
           <InputSearch placeholder="검색" />
-          <BtnSearch>검색</BtnSearch>
+          <SearchBox>
+           <BtnSearch />
+          </SearchBox>
         </SearchWrapper>
 
         <DropdownWrapper>
+          <ImgMyChanel src={Goodok} />
+          <ImgMyChanel src={Mymovie} />
+          <ImgMyChanel src={Showlecord} />
+
           <BtnProfile
             onClick={() => setshowDropdownProfile(!showDropdownProfile)}
           >
-            <ImgProfile src="http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg" />
+            <ImgProfile />
           </BtnProfile>
           {showDropdownProfile && (
             <DropdownProfile onClose={() => setshowDropdownProfile(false)} />
           )}
         </DropdownWrapper>
+
       </Container>
     </>
   );
 };
+
 
 const Container = styled.div`
   width: 100vw;
@@ -46,6 +58,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0 20px;
+  justify-content: space-around;
 `;
 
 const ImgHamburger = styled.img`
@@ -62,22 +75,55 @@ const SearchWrapper = styled.div`
 
 const InputSearch = styled.input`
   flex: 1;
-  max-width: 600px;
+  font-size: 16px;
+  max-width: 800px;
   height: 40px;
   padding: 10px;
+  margin-left: 30px;
+  border: 1px solid #ccc;
   box-sizing: border-box;
 `;
-const BtnSearch = styled.button``;
+
+const SearchBox = styled.div`
+background-color: #f8f8f8;
+padding: 1px 6px;
+border: 1px solid #ccc;
+border-left: none;
+`;
+
+const BtnSearch = styled.button`
+background-image: url(${Magnifier});
+background-position: center;
+background-size: 22px;
+width: 22px;
+height: 22px;
+margin-top: 7px;
+margin: 7px 15px 0 15px;
+`;
+
 const ImgLogo = styled.img`
   width: 120px;
   height: 56px;
-  margin: 18px 14px;
   cursor: pointer;
+  padding: 8px 4px;
+`;
+
+const ImgMyChanel = styled.img`
+margin: 0 5px;
+width: 32px;
+height: 32px; 
+align-items: center;
+margin-top: 4px;
 `;
 
 const DropdownWrapper = styled.div`
+  display: flex;
+  width: 250px;
   position: relative;
+  justify-content: space-around;
 `;
+
+
 const BtnProfile = styled.button`
   position: relative;
   padding: 0;
@@ -86,9 +132,14 @@ const BtnProfile = styled.button`
   cursor: pointer;
 `;
 const ImgProfile = styled.img`
-  width: 42px;
+  background-image: url(${ImgUserProfile});
+  background-position: center;
+  background-size: 32px;
+  width: 32px;
   height: 32px;
   border-radius: 50%;
+  margin-right: 20px;
+  margin-left: 5px;
 `;
 
 export default Topbar;
