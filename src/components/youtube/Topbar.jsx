@@ -31,7 +31,6 @@ export const Topbar = ({ onOpenSidebar }) => {
           <ImgMyChanel src={Goodok} />
           <ImgMyChanel src={Mymovie} />
           <ImgMyChanel src={Showlecord} />
-
           <BtnProfile
             onClick={() => setshowDropdownProfile(!showDropdownProfile)}
           >
@@ -71,12 +70,13 @@ const SearchWrapper = styled.div`
   flex: 1;
   display: flex;
   margin: 0 20px;
+  justify-content: center;
 `;
 
 const InputSearch = styled.input`
   flex: 1;
   font-size: 16px;
-  max-width: 800px;
+  max-width: 600px;
   height: 40px;
   padding: 10px;
   margin-left: 30px;
@@ -113,12 +113,11 @@ margin: 0 5px;
 width: 32px;
 height: 32px; 
 align-items: center;
-margin-top: 4px;
 `;
 
 const DropdownWrapper = styled.div`
   display: flex;
-  width: 250px;
+  min-width: 220px;
   position: relative;
   justify-content: space-around;
 `;
@@ -138,8 +137,7 @@ const ImgProfile = styled.img`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  margin-right: 20px;
-  margin-left: 5px;
+  margin: 0 10px 0 5px;
 `;
 
 export default Topbar;

@@ -9,16 +9,13 @@ const VideoList = ({data}) => {
         <Container>
             {data.map(({id,title,views,timestamp,channelImage,channel,image,}) => (
             <Short key={id}>
-                <ChannelImage src={channelImage}/>
-
-
-
-
+                <Content>
+                    <ChannelImage src={channelImage}/>
+                </Content>
                 <Info>
                     <MiniProfile>
                         <Image src={image} />
                     </MiniProfile>
-
                     <Text>
                         <Title>{title}</Title>
                         <Channel>{channel}</Channel>
@@ -28,7 +25,6 @@ const VideoList = ({data}) => {
                             <Timestamp>{timestamp}일 전</Timestamp>
                         </Count>
                     </Text> 
-
                 </Info>
             </Short>
             ))}
@@ -41,6 +37,7 @@ const VideoList = ({data}) => {
 
 
 const Wrap = styled.div`
+display: flex;
 width: 100%;
 background-color: #f9f9f9;
 padding: 40px 20px;
@@ -62,24 +59,35 @@ const MiniProfile = styled.div`
 `;
 
 const Text = styled.p`
-margin-left: 15px;
+margin-top: 12px;
 `;
 
 const Short = styled.div`
 margin-bottom: 40px;
-width: 270px;
+width: 25%;
+`;
+
+const Content = styled.div`
+padding: 0 10px;
 `;
 
 const Title = styled.div`
-height: 48px;
+overflow: hidden;
+display: box;
+display: -webkit-box;
 font-size: 14px;
 overflow: hidden;
 text-overflow: ellipsis;
+max-height: 37px;
+margin-bottom: 10px;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+padding: 0 24px 0 0;
 `;
 
 const ChannelImage = styled.img`
-height: 140px;
-width: 250px;
+width: 100%;
+height: 0 auto;
 `;
 
 const Count = styled.div`
