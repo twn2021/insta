@@ -46,13 +46,13 @@ padding-bottom: 0;
 
 const Container = styled.div`
 display: flex;
-justify-content: center;
+justify-content: left;
 flex-wrap: wrap;
 `;
 
 const Info = styled.div`
 display: flex;
-padding-right: 30px;
+padding: 0 30px 0 8px;
 `;
 
 const MiniProfile = styled.div`
@@ -68,7 +68,7 @@ width: 25%;
 `;
 
 const Content = styled.div`
-padding: 0 10px;
+padding: 0 8px;
 `;
 
 const Title = styled.div`
