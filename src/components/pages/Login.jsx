@@ -45,7 +45,35 @@ const Login = () => {
           </Box>
         </Right>
       </Main>
-      <Footer>Footer!!!!</Footer>
+      <Footer>
+        <Line1>
+        <p>Meta</p>
+        <p>소개</p>
+        <p>블로그</p>
+        <p>채용 정보</p>
+        <p>도움말</p>
+        <p>API</p>
+        <p>개인정보처리방침</p>
+        <p>약관</p>
+        <p>인기 계정</p>
+        <p>해시태그</p>
+        <p>위치</p>
+        <p>Instragram Lite</p>
+        </Line1>
+        <Line2>
+        <p>뷰티</p>
+        <p>댄스</p>
+        <p>피트니스</p>
+        <p>식음료</p>
+        <p>집 및 정원</p>
+        <p>음악</p>
+        <p>시각 예술</p>
+        </Line2>
+        <Line3>
+        <p>한국어</p>
+        <p>@2022 instagram from Meta</p>
+        </Line3>
+      </Footer>
     </PageWrapper>
   );
 };
@@ -60,6 +88,7 @@ const FacebookLogin = styled.div`
   color: #385185;
   text-align: center;
   margin-top: 12px;
+  font-weight: 600;
 `;
 
 const ForgetPassword = styled.div`
@@ -74,12 +103,41 @@ const SignupWrapper = styled.div`
   text-align: center;
 
   a {
-    color: #046b00;
+    color: #0095F6;
+    font-weight: 600;
   }
 `;
 
-const Footer = styled.footer`
-  text-align: center;
+const Footer = styled.div`
+  display: block;
+  color: #8E8E8E;
+  font-size: 12px;
+  margin-top: 24px;
+  margin-bottom: 52px;
+`;
+
+const Line1 = styled.div`
+display: flex;
+justify-content: center;
+p {
+margin-left: 8px;
+margin-right: 8px;
+margin-bottom: 12px;
+}
+`;
+const Line2 = styled.p`
+display: flex;
+justify-content: center;
+p {
+margin-left: 8px;
+margin-right: 8px;
+margin-bottom: 12px;
+}
+`;
+const Line3 = styled.p`
+display: flex;
+justify-content: center;
+margin: 12px 0 12px 0;
 `;
 
 export default Login;

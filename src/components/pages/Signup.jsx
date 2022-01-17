@@ -111,7 +111,7 @@ const LoginWrapper = styled.div`
   font-size: 14px;
   margin: 15px;
   a {
-    color: #046b00;
+    color: #0095F6;
   }
 `;
 

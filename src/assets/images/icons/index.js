@@ -15,6 +15,7 @@ import { ReactComponent as ImgDropdownProfile } from "./dropdownprofile.svg";
 import { ReactComponent as ImgDropdownSet } from "./dropdownset.svg";
 import { ReactComponent as ImgModalBack } from "./modalback.svg";
 import { ReactComponent as ImgOption } from "./option.svg";
+import { ReactComponent as ImgIdChange } from "./idchange.svg";
 
 import { ReactComponent as ImgPosting } from "./posting.svg";
 import { ReactComponent as ImgMovie } from "./movie.svg";
@@ -47,4 +48,5 @@ export {
   ImgTag,
   ImgBookMarkFill,
   ImgTagFill,
+  ImgIdChange,
 };

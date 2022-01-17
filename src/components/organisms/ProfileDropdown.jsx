@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {
   ImgDropdownSet,
   ImgBookMark,
+  ImgIdChange,
   ImgDropdownProfile,
 } from "../../assets/images/icons";
 
@@ -26,7 +27,7 @@ const itemList = [
   },
   {
     name: "계정전환",
-    image: <ImgBookMark width="16" height="16" />,
+    image: <ImgIdChange width="16" height="16" />,
     link: "/",
   },
 ];

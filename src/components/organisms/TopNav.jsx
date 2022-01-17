@@ -212,7 +212,7 @@ const CustomLink = styled(NavLink)`
 `;
 
  const ProfileCircle = styled.div`
- border: 1px solid #046b00;
+ border: 1px solid #ee4b00;;
  border-radius: 50%;
  height: 28px;
  width: 28px;

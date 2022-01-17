@@ -38,6 +38,15 @@ export const BtnSubmit = styled.button`
   width: 100%;
 `;
 
+export const BtnFollow = styled.button`
+  background-color: #0095f6;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 5px 9px;
+  width: 100%;
+`;
+
 export const PageWrapper = styled.div`
   background: #fafafa;
   min-height: 100vh;

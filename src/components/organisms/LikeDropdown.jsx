@@ -3,6 +3,11 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import  { Wh, Rok}  from "../../assets/images/profile";
 
+import {
+  BtnFollow,
+} from "../atoms/login";
+
+
 const LikeDropdown = ({ onClose }) => {
   return (
     <>
@@ -13,9 +18,9 @@ const LikeDropdown = ({ onClose }) => {
           <Header>
             <Pic/>
           </Header>
-          <Body>대한민국 청와대 님이 회원님의 게시물을 좋아합니다. </Body>
+          <Body>대한민국 청와대 님이 회원님을 팔로우하기 시작했습니다. </Body>
           <Footer>
-            <Content/>
+            <BtnFollow>팔로우</BtnFollow>
           </Footer>
       </Container >
       <Container >
@@ -24,7 +29,7 @@ const LikeDropdown = ({ onClose }) => {
           </Header>
           <Body>대한민국 청와대 님이 회원님의 게시물을 좋아합니다. </Body>
           <Footer>
-            <Content/>
+          <BtnFollow>팔로우</BtnFollow>
           </Footer>
       </Container >
 
@@ -86,12 +91,6 @@ background-size: 44px;
 
 `;
 
-const Content = styled.img`
-background-image: url(${Rok});
-width:40px;
-height: 40px;
-`;
-
 const Body = styled.div`
 font-size: 14px;
 line-height: 18px;
@@ -99,6 +98,9 @@ padding-left: 5px;
 margin-left: -5px;
 `;
 
-const Footer = styled.div``;
+const Footer = styled.div`
+width: 44px;
+height: 44px;
+`;
 
 export default LikeDropdown;
