@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 // import { Link } from "react-router-dom";
-import  { Wh, Rok}  from "../../assets/images/profile";
-
-import {
-  BtnFollow,
-} from "../atoms/login";
+import  { Wh, Rok, Kkw}  from "../../assets/images/profile";
 
 
 const LikeDropdown = ({ onClose }) => {
@@ -14,25 +10,35 @@ const LikeDropdown = ({ onClose }) => {
       <Backdrop onClick={onClose} />
       <Wrapper>
       <Box />
-      <Container >
-          <Header>
-            <Pic/>
-          </Header>
-          <Body>대한민국 청와대 님이 회원님을 팔로우하기 시작했습니다. </Body>
-          <Footer>
+      <FollowBox>
+        <Container >
+            <Header>
+              <Pic src={Wh}/>
+            </Header>
+            <Body>대한민국 청와대 님이 회원님을 팔로우하기 시작했습니다. </Body>
+            <Footer>
+              <BtnFollow>팔로우</BtnFollow>
+            </Footer>
+        </Container >
+        <Container >
+            <Header>
+              <Pic src={Rok}/>
+            </Header>
+            <Body>국방부님이 회원님의 게시물을 좋아합니다. </Body>
+            <Footer>
             <BtnFollow>팔로우</BtnFollow>
-          </Footer>
-      </Container >
-      <Container >
-          <Header>
-            <Pic/>
-          </Header>
-          <Body>대한민국 청와대 님이 회원님의 게시물을 좋아합니다. </Body>
-          <Footer>
-          <BtnFollow>팔로우</BtnFollow>
-          </Footer>
-      </Container >
-
+            </Footer>
+        </Container >
+        <Container >
+            <Header>
+              <Pic src={Kkw}/>
+            </Header>
+            <Body>국민권익위님이 댓글에서 회원님을 언급했습니다. </Body>
+            <Footer>
+            <BtnFollow>팔로우</BtnFollow>
+            </Footer>
+        </Container >
+      </FollowBox>
       </Wrapper>
     </>
   );
@@ -67,14 +73,18 @@ const Box = styled.div`
   background: #fff;
 `;
 
-const Container = styled.div`
+const FollowBox = styled.div`
   position: relative;
   width: 480px;
   background: #fff;
   border-radius: 6px;
+`;
+
+const Container = styled.div`
+  width: 480px;
   display: flex;
-  padding: 12px 16px;
   align-items: center;
+  padding: 12px 16px;
 `;
 
 const Header = styled.div`
@@ -84,23 +94,37 @@ display: flex;
 const Pic = styled.img`
 width:44px;
 height: 44px;
-background-image: url(${Wh});
 border-radius: 50%;
 background-position: center;
 background-size: 44px;
-
 `;
 
 const Body = styled.div`
 font-size: 14px;
 line-height: 18px;
-padding-left: 5px;
-margin-left: -5px;
+margin: 0 12px;
+display: flex;
+flex: 1;
 `;
 
 const Footer = styled.div`
-width: 44px;
-height: 44px;
+display: flex;
+align-items: center;
+text-align: center;
 `;
+
+export const BtnFollow = styled.button`
+  background-color: #0095f6;
+  border-radius: 4px;
+  color: #fff;
+  border: 1px solid transparent;
+  font-size: 14px;
+  padding: 5px 9px;
+  width: 64px;
+`;
+
+
+
+
 
 export default LikeDropdown;
