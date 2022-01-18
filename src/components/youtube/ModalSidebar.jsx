@@ -29,10 +29,8 @@ const ModalSidebar = ({ onClose }) => {
           <ImgLogo src={Youtube} alt="logo" />
         </Top>
         <Bottom>
-       
           <Menu data={sidebarMenuData1} />
           <Menu data={sidebarMenuData2} defaultCount={5} />
-       
           <Menu title="구독" data={sidebarMenuData3} defaultCount={4} />
           {/* 구독목록 4개 초과는 더보기 활성화 */}
           <Menu title="YOUTUBE 더보기" data={sidebarMenuData4} />

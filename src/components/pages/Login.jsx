@@ -16,8 +16,11 @@ const Login = () => {
   return (
     <PageWrapper>
       <Main>
-        <LoginLeft />
+ 
+          <LoginLeft />
+     
         <Right>
+          
           <Box>
             <Logo src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
             <Form>
@@ -37,6 +40,7 @@ const Login = () => {
               <FacebookLogin>Facebook으로 로그인</FacebookLogin>
               <ForgetPassword>비밀번호를 잊으셨나요?</ForgetPassword>
             </Form>
+          
           </Box>
           <Box>
             <SignupWrapper>
@@ -45,38 +49,40 @@ const Login = () => {
           </Box>
         </Right>
       </Main>
+
       <Footer>
         <Line1>
-        <p>Meta</p>
-        <p>소개</p>
-        <p>블로그</p>
-        <p>채용 정보</p>
-        <p>도움말</p>
-        <p>API</p>
-        <p>개인정보처리방침</p>
-        <p>약관</p>
-        <p>인기 계정</p>
-        <p>해시태그</p>
-        <p>위치</p>
-        <p>Instragram Lite</p>
+          <p>Meta</p>
+          <p>소개</p>
+          <p>블로그</p>
+          <p>채용 정보</p>
+          <p>도움말</p>
+          <p>API</p>
+          <p>개인정보처리방침</p>
+          <p>약관</p>
+          <p>인기 계정</p>
+          <p>해시태그</p>
+          <p>위치</p>
+          <p>Instragram Lite</p>
         </Line1>
         <Line2>
-        <p>뷰티</p>
-        <p>댄스</p>
-        <p>피트니스</p>
-        <p>식음료</p>
-        <p>집 및 정원</p>
-        <p>음악</p>
-        <p>시각 예술</p>
+          <p>뷰티</p>
+          <p>댄스</p>
+          <p>피트니스</p>
+          <p>식음료</p>
+          <p>집 및 정원</p>
+          <p>음악</p>
+          <p>시각 예술</p>
         </Line2>
         <Line3>
-        <p>한국어</p>
-        <p>@2022 instagram from Meta</p>
+          <p>한국어</p>
+          <p>@2022 instagram from Meta</p>
         </Line3>
       </Footer>
     </PageWrapper>
   );
 };
+
 
 const Right = styled.div`
   width: 350px;
@@ -109,11 +115,15 @@ const SignupWrapper = styled.div`
 `;
 
 const Footer = styled.div`
-  display: block;
-  color: #8E8E8E;
-  font-size: 12px;
-  margin-top: 24px;
-  margin-bottom: 52px;
+display: block;
+color: #8E8E8E;
+font-size: 12px;
+margin-top: 24px;
+margin-bottom: 52px;
+@media (max-width: 730px)
+{
+  display: none;
+}
 `;
 
 const Line1 = styled.div`

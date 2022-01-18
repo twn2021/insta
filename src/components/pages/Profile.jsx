@@ -52,7 +52,7 @@ const Profile = () => {
           {/* NavLink 첫페이지는 end to 로 지정 */}
           <CustomLink end to="/profile">
             <Menu>
-              <ImgPosting alt="이유는 모르겠고. 어느순간부터 같이 색상이 변경됨"/>
+              <ImgPosting />
               게시물
             </Menu>
           </CustomLink>

@@ -1,7 +1,10 @@
-
 import { Favorite, Goodok, Home, Like, Membership,
   Mycinema, Premium, Record, Savebox, Search, Changeid,
   Setting, Showlecord, Willsee, Mymovie, Mychanel, Logout, } from  "../assets/images/youtube"
+
+import {
+js, jQuery, react, Kkw, Rok, Wh, Seoul,
+} from "../assets/images/profile";
 
 
 //프로필(오른쪽)메뉴
@@ -81,38 +84,31 @@ export const sidebarMenuData2 = [
 
 export const sidebarMenuData3 = [
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: js,
     name: "구독 목록1",
   },
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: jQuery,
     name: "구독 목록2",
   },
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: react,
     name: "구독 목록3",
   },
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: Kkw,
     name: "구독 목록4",
   },
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: Rok,
     name: "구독 목록5",
   },
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: Seoul,
     name: "구독 목록6",
   },
   {
-    image:
-      "http://t1.daumcdn.net/friends/prod/editor/dc8b3d02-a15a-4afa-a88b-989cf2a50476.jpg",
+    image: Wh,
     name: "구독 목록7",
   },
 ];

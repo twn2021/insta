@@ -50,6 +50,7 @@ const Wrapper = styled.div`
 const ImageList = styled.div`
   position: relative;
 `;
+
 const Image = styled.img`
   position: absolute;
   top: 100px;
