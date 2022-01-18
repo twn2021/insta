@@ -79,7 +79,7 @@ font-size: 14px;
 overflow: hidden;
 text-overflow: ellipsis;
 max-height: 37px;
-margin-bottom: 10px;
+margin-bottom: 8px;
 -webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
 padding: 0 24px 0 0;

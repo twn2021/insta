@@ -113,7 +113,7 @@ align-items: center;
 text-align: center;
 `;
 
-export const BtnFollow = styled.button`
+const BtnFollow = styled.button`
   background-color: #0095f6;
   border-radius: 4px;
   color: #fff;
@@ -122,8 +122,6 @@ export const BtnFollow = styled.button`
   padding: 5px 9px;
   width: 64px;
 `;
-
-
 
 
 
