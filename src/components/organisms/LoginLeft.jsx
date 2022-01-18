@@ -45,6 +45,9 @@ const Wrapper = styled.div`
   height: 618px;
   width: 454px;
   background-image: url(https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png);
+  @media (max-width: 800px) {
+  display: none;
+}
 `;
 
 const ImageList = styled.div`

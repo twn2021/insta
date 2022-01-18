@@ -88,6 +88,7 @@ const Right = styled.div`
   width: 350px;
 `;
 
+
 const Form = styled.form``;
 
 const FacebookLogin = styled.div`
@@ -120,8 +121,7 @@ color: #8E8E8E;
 font-size: 12px;
 margin-top: 24px;
 margin-bottom: 52px;
-@media (max-width: 730px)
-{
+@media (max-width: 800px) {
   display: none;
 }
 `;
@@ -135,6 +135,7 @@ margin-right: 8px;
 margin-bottom: 12px;
 }
 `;
+
 const Line2 = styled.p`
 display: flex;
 justify-content: center;
@@ -144,6 +145,7 @@ margin-right: 8px;
 margin-bottom: 12px;
 }
 `;
+
 const Line3 = styled.p`
 display: flex;
 justify-content: center;
